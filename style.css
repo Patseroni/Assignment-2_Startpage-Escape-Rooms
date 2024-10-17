@@ -1,31 +1,71 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: Roboto, sans-serif;
 }
 
-.header{
+.header {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 144px;
+    height: 145px;
     background-color: #011827;
 }
 
-.logo{
-    width:128px;
-    height:82px;
-    margin-left:30px;
+.header__logo {
+    width: 130px;
+    margin-left: 30px;
 
 }
 
-.h1{
-    
-    color:#fff;
+.h1 {
+
+    color: #fff;
     font-size: 24px;
-    margin-left:10px;
+    margin-left: 10px;
 }
 
-.topImage__img{
-    width:100%;
+.topImage__img {
+    width: 100%;
 }
+
+.navLinks {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.navLinks__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    min-width: 250px;
+    height: 70px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #011827;
+    background-color: #8ACFE5;
+    text-decoration: none;
+
+}
+
+.navLinks__link2{
+    font-size:16px;
+    font-weight: bold;
+    color: #36769D;
+    margin-top:30px;
+}
+
+.johnDoe{
+    display:flex;
+    width: 440px;
+    height: 140px;
+}
+
+.johnDoe__img{
+    
+}
+/* w439 h139 */

@@ -18,18 +18,17 @@
 
 }
 
-.h1 {
-
+.main-title {
     color: #fff;
     font-size: 24px;
     margin-left: 10px;
 }
 
-.topImage__img {
+.top-image__img {
     width: 100%;
 }
 
-.navLinks {
+.nav-links {
     font-size: 24px;
     display: flex;
     flex-direction: column;
@@ -37,7 +36,7 @@
     margin-top: 30px;
 }
 
-.navLinks__link {
+.nav-links__link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,20 +51,48 @@
 
 }
 
-.navLinks__link2{
-    font-size:16px;
+.nav-links__link2 {
+    font-size: 16px;
     font-weight: bold;
     color: #36769D;
-    margin-top:30px;
+    margin-top: 30px;
 }
 
-.johnDoe{
-    display:flex;
-    width: 440px;
-    height: 140px;
+.john-doe {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    /* background-color: antiquewhite; */
 }
 
-.johnDoe__img{
-    
+.john-doe__img {
+    /* background-color: #36769D; */
+    height: 80px;
+    margin-right: 20px;
+
 }
-/* w439 h139 */
+
+.john-doe__text {
+    /* background-color: #011827; */
+    font-size: 24px;
+    font-style: italic;
+    margin-right: 25px;
+
+}
+
+.john-doe__small-text {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    padding-left: 40px;
+    margin-top: 10px;
+}
+
+.popular-challenges-title {
+    display: flex;
+    background-color: #36769D;
+    justify-content: center;
+    align-items: end;
+    height: 80px;
+}

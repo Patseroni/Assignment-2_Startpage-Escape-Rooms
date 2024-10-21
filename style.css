@@ -186,7 +186,7 @@
     font-size: 28px;
 }
 
-.story-text-and-link__text{
+.story-text-and-link__text {
     padding: 0px 20px;
 }
 
@@ -202,6 +202,42 @@
 
 }
 
-.image-of-colleagues {
+.teambuilding__image-of-colleagues {
     width: 100%;
+}
+
+.teambuilding__heading, .play-online__heading {
+    font-size: 32px;
+    font-weight: bold;
+    padding: 25px 18px;
+}
+
+.teambuilding__text, .play-online__text {
+    font-size: 24px;
+    padding: 0px 18px;
+}
+
+.teambuilding__link, .play-online__link {
+    background-color: #E3170A;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    line-height: 70px;
+    border-radius: 5px;
+    text-align: center;
+    width: 310px;
+    height: 70px;
+    margin: 50px 0px 60px 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.play-online__img{
+    width:100%;
+}
+
+.foot{
+    background-color: #011827;
+    color:#fff;
+    padding:60px 25px;
 }

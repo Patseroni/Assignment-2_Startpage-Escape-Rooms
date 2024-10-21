@@ -48,6 +48,7 @@
     color: #011827;
     background-color: #8ACFE5;
     text-decoration: none;
+    border-radius: 5px;
 
 }
 
@@ -61,7 +62,7 @@
 .john-doe {
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+    padding-top: 60px;
     flex-wrap: wrap;
     /* background-color: antiquewhite; */
 }
@@ -89,10 +90,57 @@
     margin-top: 10px;
 }
 
-.popular-challenges-title {
+.popular-challenges {
+    display: flex;
+    flex-direction: column;
+    /* background-color: #36769D; */
+    padding: 30px;
+}
+
+.popular-challenges__main-title {
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+.popular-challenges__big-image {
     display: flex;
     background-color: #36769D;
     justify-content: center;
     align-items: end;
-    height: 80px;
+    margin-bottom: 10px;
+}
+
+.popular-challenges--star {
+    margin-left: 4px;
+}
+
+.popular-challenges__second-title {
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.popular-challenges__participants {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.popular-challenges__description {
+    font-size: 18px;
+    padding-top: 20px;
+}
+
+.popular-challenges__book-room {
+    background-color: red;
+    text-align: center;
+    line-height: 40px;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 5px;
+    
+
 }

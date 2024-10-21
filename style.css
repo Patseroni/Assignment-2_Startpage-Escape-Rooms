@@ -92,14 +92,28 @@
 
 .popular-challenges {
     display: flex;
-    flex-direction: column;
-    /* background-color: #36769D; */
-    padding: 30px;
+    align-items: center;
+    background-color: #36769D;
+    padding-top: 30px;
+    overflow-x:auto;
 }
 
 .popular-challenges__main-title {
-    padding-top: 50px;
-    padding-bottom: 10px;
+    padding-bottom: 50px;
+    padding-top: 60px;
+    font-size:32px;
+    font-weight: normal;
+    text-align: center;
+
+}
+
+.popular-challenges__container{
+    display: flex;
+    flex-direction: column;
+    background-color: blueviolet;
+    width:75%;
+    margin:0px 20px 0px 20px;
+
 }
 
 .popular-challenges__big-image {
@@ -130,6 +144,12 @@
     padding-top: 20px;
 }
 
+.link-wrapper{
+    /* background-color: #8ACFE5; */
+    display: flex;
+    justify-content: flex-end;
+}
+
 .popular-challenges__book-room {
     background-color: red;
     text-align: center;
@@ -140,7 +160,6 @@
     width: 150px;
     height: 40px;
     border-radius: 5px;
-    margin-top: 5px;
-    
+    margin-top: 10px;
 
 }

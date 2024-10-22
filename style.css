@@ -1,7 +1,9 @@
+/* reminder: rem = px/16 */
+
 * {
     margin: 0;
     padding: 0;
-    font-family: Roboto, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .header {
@@ -18,26 +20,34 @@
 
 }
 
-.main-title {
+.header__main-title {
     color: #fff;
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-left: 10px;
+    width: 100px;
+}
+
+.header__desktop-menu{
+    display: none;
 }
 
 .top-image__img {
     width: 100%;
 }
 
+.top-image__img--desktop{
+    display:none;
+}
+
 .nav-links {
-    font-size: 24px;
+    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
 }
 
-.nav-links__link,
-.nav-links__link3 {
+.nav-links__on-site {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +55,7 @@
     min-width: 250px;
     height: 70px;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: #011827;
     background-color: #8ACFE5;
     text-decoration: none;
@@ -53,24 +63,24 @@
 
 }
 
-.nav-links__link3 {
-    margin-top: 5px;
-}
-
-.nav-links__link2,
-.nav-links__link4 {
-    font-size: 16px;
+.nav-links__online {
+    font-size: 1rem;
     font-weight: bold;
     color: #36769D;
     margin-top: 30px;
 }
 
-.john-doe {
+
+.john-doe, .john-doe--right {
     display: flex;
     justify-content: center;
     padding-top: 60px;
     flex-wrap: wrap;
     /* background-color: antiquewhite; */
+}
+
+.john-doe--right{
+    display: none;
 }
 
 .john-doe__img {
@@ -81,19 +91,31 @@
 }
 
 .john-doe__text {
-    /* background-color: #011827; */
-    font-size: 24px;
+    /* background-color: #24be83; */
+    font-size: 1.5rem;
+    /* width: 330px; */
+    width: 70%;
+    max-width: 600px; 
     font-style: italic;
-    margin-right: 25px;
 
 }
 
 .john-doe__small-text {
+    /* background-color: aquamarine; */
     width: 100%;
     text-align: center;
-    font-size: 16px;
-    padding-left: 40px;
+    font-size: 1rem;
     margin-top: 10px;
+}
+
+
+.popular-challenges__main-title {
+    padding-bottom: 30px;
+    padding-top: 100px;
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+
 }
 
 .popular-challenges {
@@ -104,20 +126,12 @@
     overflow-x: auto;
 }
 
-.popular-challenges__main-title {
-    padding-bottom: 30px;
-    padding-top: 100px;
-    font-size: 32px;
-    font-weight: normal;
-    text-align: center;
-
-}
-
 .popular-challenges__container {
     display: flex;
     flex-direction: column;
     /* background-color: blueviolet; */
     width: 80%;
+    max-width: 364px;
     margin: 0px 20px 20px 20px;
     border-radius: 10px;
     box-shadow: 0px 2px 10px -5px black;
@@ -128,16 +142,17 @@
     margin-bottom: 10px;
 }
 
-.popular-challenges--star:nth-child(1) {
+.popular-challenges__star--filled:nth-child(1) {
     margin-left: 14px;
 }
 
-.popular-challenges--star {
+.popular-challenges__star--filled,
+.popular-challenges__star--empty {
     margin-left: 6px;
 }
 
 .popular-challenges__second-title {
-    font-size: 28px;
+    font-size: 1.75rem;
     margin-bottom: 5px;
     font-weight: normal;
     padding-left: 10px;
@@ -146,11 +161,11 @@
 .popular-challenges__participants {
     display: inline-block;
     margin-left: 20px;
-    font-size: 14px;
+    font-size: 0.9rem;
 }
 
 .popular-challenges__description {
-    font-size: 18px;
+    font-size: 1.13rem;
     padding-top: 20px;
     padding: 10px;
 }
@@ -161,7 +176,7 @@
     justify-content: flex-end;
 }
 
-.popular-challenges__link-wrapper__book-room {
+.popular-challenges__book-room {
     background-color: #E3170A;
     text-align: center;
     line-height: 40px;
@@ -172,7 +187,7 @@
     height: 45px;
     border-radius: 5px;
     margin: 5px 10px 5px 5px;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -183,7 +198,7 @@
     padding-bottom: 40px;
     background-color: #011827;
     color: #fff;
-    font-size: 28px;
+    font-size: 1.75rem;
 }
 
 .story-text-and-link__text {
@@ -196,7 +211,7 @@
     margin: 50px auto 80px auto;
     text-decoration: none;
     padding: 15px;
-    width: 60%;
+    max-width: 300px;
     border: 3px solid #8ACFE5;
     border-radius: 3px;
 
@@ -206,18 +221,21 @@
     width: 100%;
 }
 
-.teambuilding__heading, .play-online__heading {
-    font-size: 32px;
+.teambuilding__heading,
+.play-online__heading {
+    font-size: 2rem;
     font-weight: bold;
     padding: 25px 18px;
 }
 
-.teambuilding__text, .play-online__text {
-    font-size: 24px;
+.teambuilding__text,
+.play-online__text {
+    font-size: 1.5rem;
     padding: 0px 18px;
 }
 
-.teambuilding__link, .play-online__link {
+.teambuilding__link,
+.play-online__link {
     background-color: #E3170A;
     color: #fff;
     display: block;
@@ -228,16 +246,131 @@
     width: 310px;
     height: 70px;
     margin: 50px 0px 60px 20px;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-.play-online__img{
-    width:100%;
+.play-online__link {
+    margin-bottom: 100px;
 }
 
-.foot{
+.play-online__img {
+    width: 100%;
+}
+
+.foot {
     background-color: #011827;
-    color:#fff;
-    padding:60px 25px;
+    color: #fff;
+    padding: 60px 25px;
+    font-size: 1.3rem;
+}
+
+.foot__heading {
+    margin-bottom: 10px;
+}
+
+.foot__text {
+    margin-bottom: 40px;
+}
+
+.foot__sitemap {
+    margin-bottom: 20px;
+}
+
+.foot__heading-1 {
+    margin-bottom: 6px;
+}
+
+.foot a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.foot__legal {
+    margin-bottom: 25px;
+}
+
+.foot__play-onsite {
+    margin-bottom: 40px;
+}
+
+.foot__heading-2 {
+    margin-bottom: 6px;
+}
+
+
+@media screen and (min-width: 1000px) {
+    .header {
+        height: 215px;
+        flex-wrap: wrap;
+    }
+
+    .header__main-title {
+        /* background-color: red; */
+        width: auto;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-left: 30px;
+        margin-top: 45px;
+    }
+
+    .header__desktop-menu{
+        /* background-color: #8ACFE5; */
+        display:flex;
+        justify-content: center;
+        width:100%;
+        color:#fff;   
+    }
+
+    .header__desktop-menu a{
+        /* background-color: #36769D; */
+        margin: auto 50px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+
+    .header__play-online, 
+    .header__play-onsite,
+    .header__story{
+        color:#fff;
+    }
+
+    .header__contact{
+        color:#8ACFE5;
+    }
+
+    .top-image__img{
+        display: none;
+    }
+
+    .top-image__img--desktop{
+        display: block;
+        width:100%;
+    }
+
+    .john-doe-wrapper{
+        display: flex;
+        justify-content: center;
+        margin-top:70px;
+    }
+
+    .john-doe--right{
+        display: flex;
+        /* background-color: red; */
+    }
+
+    .john-doe__text{
+        width: 390px;
+    }
+
+    .nav-links__online{
+        display: none;
+    }
+
+    .john-doe__small-text{
+        margin-right:60px;
+    }
 }

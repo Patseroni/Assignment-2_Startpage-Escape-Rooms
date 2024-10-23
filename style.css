@@ -6,6 +6,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body{
+    max-width:1280px;
+    margin:auto;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -27,7 +32,7 @@
     width: 100px;
 }
 
-.header__desktop-menu{
+.header__desktop-menu {
     display: none;
 }
 
@@ -35,11 +40,12 @@
     width: 100%;
 }
 
-.top-image__img--desktop{
-    display:none;
+.top-image__img--desktop {
+    display: none;
 }
 
-.nav-links {
+.nav-links-top,
+.nav-links-bottom {
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -47,7 +53,8 @@
     margin-top: 30px;
 }
 
-.nav-links__on-site {
+.nav-links-top__on-site,
+.nav-links-bottom__on-site {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,15 +70,16 @@
 
 }
 
-.nav-links__online {
+.nav-links-top__online,
+.nav-links-bottom__online {
     font-size: 1rem;
     font-weight: bold;
     color: #36769D;
     margin-top: 30px;
 }
 
-
-.john-doe, .john-doe--right {
+.john-doe,
+.john-doe--right {
     display: flex;
     justify-content: center;
     padding-top: 60px;
@@ -79,7 +87,7 @@
     /* background-color: antiquewhite; */
 }
 
-.john-doe--right{
+.john-doe--right {
     display: none;
 }
 
@@ -95,7 +103,7 @@
     font-size: 1.5rem;
     /* width: 330px; */
     width: 70%;
-    max-width: 600px; 
+    max-width: 600px;
     font-style: italic;
 
 }
@@ -134,7 +142,7 @@
     max-width: 364px;
     margin: 0px 20px 20px 20px;
     border-radius: 10px;
-    box-shadow: 0px 2px 10px -5px black;
+    box-shadow: 0px 2px 10px 0px #B6BDB5;
 
 }
 
@@ -210,9 +218,11 @@
     display: block;
     margin: 50px auto 80px auto;
     text-decoration: none;
-    padding: 15px;
-    max-width: 300px;
-    border: 3px solid #8ACFE5;
+    padding: 20px 4px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    max-width: 308px;
+    border: 2px solid #8ACFE5;
     border-radius: 3px;
 
 }
@@ -316,15 +326,15 @@
         margin-top: 45px;
     }
 
-    .header__desktop-menu{
+    .header__desktop-menu {
         /* background-color: #8ACFE5; */
-        display:flex;
+        display: flex;
         justify-content: center;
-        width:100%;
-        color:#fff;   
+        width: 100%;
+        color: #fff;
     }
 
-    .header__desktop-menu a{
+    .header__desktop-menu a {
         /* background-color: #36769D; */
         margin: auto 50px;
         text-decoration: none;
@@ -332,45 +342,117 @@
         font-size: 1.3rem;
     }
 
-    .header__play-online, 
+    .header__play-online,
     .header__play-onsite,
-    .header__story{
-        color:#fff;
+    .header__story {
+        color: #fff;
     }
 
-    .header__contact{
-        color:#8ACFE5;
+    .header__contact {
+        color: #8ACFE5;
     }
 
-    .top-image__img{
+    .top-image__img {
         display: none;
     }
 
-    .top-image__img--desktop{
+    .top-image__img--desktop {
         display: block;
-        width:100%;
+        width: 100%;
+        position: relative;
     }
 
-    .john-doe-wrapper{
+    .john-doe-wrapper {
         display: flex;
         justify-content: center;
-        margin-top:70px;
+        margin-top: 70px;
     }
 
-    .john-doe--right{
+    .john-doe--right {
         display: flex;
         /* background-color: red; */
     }
 
-    .john-doe__text{
+    .john-doe__text {
         width: 390px;
     }
 
-    .nav-links__online{
-        display: none;
+    .nav-links-top {
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: auto 325px 325px auto;
+        position: relative;
+
+        background-color: rgb(43, 226, 165);
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 0px;
     }
 
-    .john-doe__small-text{
-        margin-right:60px;
+    .nav-links-top__on-site {
+        grid-column: 3;
+        justify-self: center;
+        position: absolute;
+        bottom: -35px;
+        /* Experimental solution. I have no idea why I have to type left:0px. If I remove it, it does not work. right:0px and top:0px does not work either.*/
+        /* Maybe should have used translate transformY */
+        left: 0px;
+    }
+
+    .nav-links-top__online {
+        grid-column: 2;
+        justify-self: center;
+        position: absolute;
+        bottom: -35px;
+        left: 0px;
+
+        line-height: 70px;
+        text-align: center;
+        align-items: center;
+        width: 300px;
+        min-width: 250px;
+        height: 70px;
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: #fff;
+        background-color: #E3170A;
+        text-decoration: none;
+        border-radius: 5px;
+        order: -1;
+        margin-top: 0px;
+
+    }
+
+    .john-doe__small-text {
+        margin-right: 60px;
+    }
+
+    .story-text-and-link{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height:500px;
+        padding:0px;
+    }
+
+    .story-text-and-link__text{
+        width: 39rem;
+        margin-top:70px;
+
+    }
+
+    .story-text-and-link__link{
+        width: 308px;
+        margin-top:30px;
+    
+    }
+
+    .teambuilding{
+        display: flex;
+    }
+
+    .play-online{
+        display: flex;
     }
 }

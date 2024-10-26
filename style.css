@@ -113,8 +113,8 @@ body {
 
 
 .popular-challenges__main-title {
-    padding-bottom: 40px;
-    padding-top: 60px;
+    padding-bottom: 50px;
+    padding-top: 80px;
     font-size: 2.25rem;
     font-weight: normal;
     text-align: center;
@@ -329,6 +329,11 @@ body {
         color: #fff;
     }
 
+    .header__ul{
+        list-style: none;
+        display: flex;
+    }
+
     .header__desktop-menu a {
         margin: auto 50px;
         text-decoration: none;
@@ -533,7 +538,7 @@ body {
 }
 
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 428px) {
     .john-doe {
         text-align: center;
     }

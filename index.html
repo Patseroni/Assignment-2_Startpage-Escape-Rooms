@@ -13,8 +13,8 @@
     <header class="header">
         <img class="header__logo" src="/images/Group 1.png" alt="Escape room logotype">
         <h1 class="header__main-title">Hacker Escape Rooms</h1>
-        
-        <!-- @media >= 1000px -->
+
+        <!-- visible >= 1000px -->
         <nav class="header__desktop-menu">
             <a class="header__play-online" href="#">Play online</a>
             <a class="header__play-onsite" href="#">Play on-site</a>
@@ -145,19 +145,37 @@
     <section class="teambuilding">
         <img class="teambuilding__image-of-colleagues" src="/images/colleagues.png"
             alt="image of two colleagues sitting at a computer">
-        <h2 class="teambuilding__heading">Play with your friends or build your team stronger at work</h2>
-        <p class="teambuilding__text">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.
-            Nemo nocere tibi erit, et non inimicos, et</p>
-        <a class="teambuilding__link" href="#">Book on-site today</a>
+        
+            <!-- width >= 1000px -->
+        <img class="teambuilding__image-of-colleagues--big" src="/images/colleagues_big.png"
+            alt="image of two colleagues sitting at a computer">
+        <!-- --- -->
+        
+        <div class="teambuilding__column">
+            <h2 class="teambuilding__heading">Play with your friends or build your team stronger at work</h2>
+            <p class="teambuilding__text">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil
+                inuitam.
+                Nemo nocere tibi erit, et non inimicos, et</p>
+            <a class="teambuilding__link" href="#">Book on-site today</a>
+        </div>
+
     </section>
 
     <section class="play-online">
         <img class="play-online__img" src="/images/kelly.png" alt="A girl sitting at the computer">
-        <h2 class="play-online__heading">Play online or visit our venue for one of our 25 escape rooms</h2>
-        <p class="play-online__text">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.
-            Nemo nocere tibi erit, et non
-            inimicos, et</p>
-        <a class="play-online__link">See all challenges</a>
+        
+        <!-- width >= 1000px -->
+        <img class="play-online__img--big" src="/images/kelly_big.png" alt="A girl sitting at the computer">
+        <!-- --- -->
+        
+        <div class="play-online__column">
+            <h2 class="play-online__heading">Play online or visit our venue for one of our 25 escape rooms</h2>
+            <p class="play-online__text">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.
+                Nemo nocere tibi erit, et non
+                inimicos, et</p>
+            <a class="play-online__link">See all challenges</a>
+        </div>
+
     </section>
 
     <footer class="foot">
@@ -165,8 +183,8 @@
         <p class="foot__text">Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec eo spectant
             haec quoque vos omnino desit illud quo solo felicitatis libertatisque perficiuntur.</p>
 
-        <nav class="foot__sitemap">
-            <h3 class="foot__heading-1">Site map</h3>
+        <nav class="foot__navigation">
+            <h3 class="foot__sitemap">Site map</h3>
             <a class="foot__Story" href="#">The story</a>
             <a class="foot__contact" href="#">Contact Us</a>
             <a class="foot__legal" href="#">Legal</a>
@@ -174,7 +192,7 @@
             <a class="foot__play-online" href="#">Play online</a>
             <a class="foot__play-onsite" href="#">Play on-site</a>
 
-            <h3 class="foot__heading-2">Follow us on</h3>
+            <h3 class="foot__follow">Follow us on</h3>
             <a class="foot__facebook" href="#">Facebook</a>
             <a class="foot__instagram" href="#">Instagram</a>
             <a class="foot__twitter" href="#">Twitter</a>

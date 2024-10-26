@@ -5,7 +5,8 @@
 }
 
 body {
-    max-width: 1400px;
+    min-width: 350px;
+    max-width: 1280px;
     margin: auto;
 }
 
@@ -502,7 +503,7 @@ body {
     .foot__left-content {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
-        width:60%;
+        width: 60%;
     }
 
     .foot__middle-content {
@@ -522,15 +523,22 @@ body {
         justify-content: center;
     }
 
-    @media screen and (min-width: 1200px){
+}
 
-        .popular-challenges{
-            justify-content: center;
-        }
+@media screen and (max-width: 430px){
+    .john-doe{
+        text-align: center;
     }
 
+    .john-doe__small-text{
+        margin:10px 0px 0px 0px;
+    }
+    
+}
 
+@media screen and (min-width: 1200px) {
 
-
-
+    .popular-challenges {
+        justify-content: center;
+    }
 }

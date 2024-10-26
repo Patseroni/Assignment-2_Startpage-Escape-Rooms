@@ -5,7 +5,7 @@
 }
 
 body {
-    max-width: 1280px;
+    max-width: 1400px;
     margin: auto;
 }
 
@@ -121,6 +121,7 @@ body {
 }
 
 .popular-challenges {
+    background-color: #36769D;
     display: flex;
     align-items: center;
     padding-top: 20px;
@@ -522,7 +523,12 @@ body {
         justify-content: center;
     }
 
+    @media screen and (min-width: 1200px){
 
+        .popular-challenges{
+            justify-content: center;
+        }
+    }
 
 
 

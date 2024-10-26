@@ -107,15 +107,15 @@ body {
     width: 100%;
     text-align: center;
     font-size: 1rem;
-    margin-top: 10px;
-    margin-left: 40px;
+    margin-top: 15px;
+    margin-left: 50px;
 }
 
 
 .popular-challenges__main-title {
-    padding-bottom: 30px;
-    padding-top: 100px;
-    font-size: 2rem;
+    padding-bottom: 40px;
+    padding-top: 60px;
+    font-size: 2.25rem;
     font-weight: normal;
     text-align: center;
 
@@ -356,38 +356,16 @@ body {
     }
 
     .nav-links-top {
-        display: grid;
-        grid-template-rows: 100%;
-        grid-template-columns: auto 325px 325px auto;
-        position: relative;
-
-        background-color: rgb(43, 226, 165);
         flex-direction: row;
         justify-content: center;
         margin-top: 0px;
-    }
-
-    .nav-links-top__on-site {
-        grid-column: 3;
-        justify-self: center;
-        position: absolute;
-        bottom: -35px;
-        /* Experimental solution. I wonder why I have to type left:0px. If I remove it, it doesn't work.*/
-        left: 0px;
+        transform: translateY(-35px); 
     }
 
     .nav-links-top__online {
-        grid-column: 2;
-        justify-self: center;
-        position: absolute;
-        bottom: -35px;
-        left: 0px;
-
         line-height: 70px;
         text-align: center;
-        align-items: center;
         width: 300px;
-        min-width: 250px;
         height: 70px;
         font-weight: bold;
         font-size: 1.5rem;
@@ -397,12 +375,37 @@ body {
         border-radius: 5px;
         order: -1;
         margin-top: 0px;
+        margin-right: 25px;
+    }
+
+    .nav-links-bottom {
+        margin-top:70px;
+        margin-bottom:90px;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .nav-links-bottom__online {
+        line-height: 70px;
+        text-align: center;
+        width: 300px;
+        height: 70px;
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: #fff;
+        background-color: #E3170A;
+        text-decoration: none;
+        border-radius: 5px;
+        order: -1;
+        margin-top: 0px;
+        margin-right: 25px;
     }
 
     .john-doe-wrapper {
+        max-width: 1100px;
         display: flex;
+        margin: 20px auto 70px auto;
         justify-content: center;
-        margin-top: 70px;
     }
 
     .john-doe--right {
@@ -417,6 +420,11 @@ body {
 
     .john-doe__small-text {
         margin-right: 60px;
+    }
+
+    .popular-challenges__participants{
+        width:200px;
+        text-align: right;
     }
 
     .story-text-and-link {
@@ -522,23 +530,31 @@ body {
     .foot__right-content {
         justify-content: center;
     }
-
 }
 
-@media screen and (max-width: 430px){
-    .john-doe{
+
+@media screen and (max-width: 430px) {
+    .john-doe {
         text-align: center;
     }
 
-    .john-doe__small-text{
-        margin:10px 0px 0px 0px;
+    .john-doe__small-text {
+        margin: 10px 0px 0px 0px;
     }
-    
+
 }
+
 
 @media screen and (min-width: 1200px) {
 
     .popular-challenges {
         justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 370px){
+    .popular-challenges__second-title{
+        font-size: 1.5rem;
     }
 }

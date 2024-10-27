@@ -329,7 +329,7 @@ body {
         color: #fff;
     }
 
-    .header__ul{
+    .header__ul {
         list-style: none;
         display: flex;
     }
@@ -364,7 +364,7 @@ body {
         flex-direction: row;
         justify-content: center;
         margin-top: 0px;
-        transform: translateY(-35px); 
+        transform: translateY(-35px);
     }
 
     .nav-links-top__online {
@@ -384,8 +384,8 @@ body {
     }
 
     .nav-links-bottom {
-        margin-top:70px;
-        margin-bottom:90px;
+        margin-top: 70px;
+        margin-bottom: 90px;
         flex-direction: row;
         justify-content: center;
     }
@@ -427,8 +427,8 @@ body {
         margin-right: 60px;
     }
 
-    .popular-challenges__participants{
-        width:200px;
+    .popular-challenges__participants {
+        width: 200px;
         text-align: right;
     }
 
@@ -558,8 +558,8 @@ body {
 }
 
 
-@media screen and (max-width: 370px){
-    .popular-challenges__second-title{
+@media screen and (max-width: 370px) {
+    .popular-challenges__second-title {
         font-size: 1.5rem;
     }
 }

@@ -25,7 +25,7 @@ menuCross.classList.add('menu-cross');
 menuLinksDiv.classList.add('menu-links-div');
 
 hamburgerLink.href = '#';
-hamburgerImg.src = 'images/group_7.png';
+hamburgerImg.src = 'images/Group_7.png';
 
 menuCross.src = 'images/close.png';
 menuBackground.appendChild(menuCrossDiv);

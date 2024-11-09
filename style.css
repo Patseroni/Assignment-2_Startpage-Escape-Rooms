@@ -24,7 +24,6 @@ a:hover {
     to {
         opacity: 1;
         width:90%;
-        /* margin:5% 5%; */
     }
 }
 
@@ -56,7 +55,7 @@ a:hover {
     animation-fill-mode: forwards;
 
     width: 90%;
-    height: 90vh;
+    height: 94vh;
     background-color: #011827;
     position: absolute;
     top: 0px;

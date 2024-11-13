@@ -1,0 +1,9 @@
+.main__title {
+    font-size: 2rem;
+    text-align: center;
+}
+.main__butoon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

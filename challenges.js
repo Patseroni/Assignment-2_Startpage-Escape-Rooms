@@ -1,4 +1,4 @@
-const arr = [];
+const challengesArray = [];
 const challengesWrapper = document.querySelector(".challenges__wrapper");
 
 
@@ -8,7 +8,7 @@ async function getAPI() {
     console.log(data);
 
     data.challenges.forEach((challenge) => {
-        arr.push(challenge);
+        challengesArray.push(challenge);
     })
 
 for (i = 0; i < data.challenges.length; i++) {
@@ -16,7 +16,7 @@ for (i = 0; i < data.challenges.length; i++) {
     const challenge = data.challenges[i];
 
     const challengeContainer = document.createElement("article");
-    challengeContainer.classList.add("challenges__container");
+    challengeContainer.classList.add("challenges");
     challengesWrapper.appendChild(challengeContainer);
     
 
@@ -68,7 +68,7 @@ for (i = 0; i < data.challenges.length; i++) {
 }
 
 }
-console.log(arr);
+console.log(challengesArray);
 
 
 /* Example on all objects from API

@@ -1,0 +1,108 @@
+.main__title {
+    margin-top: 50px;
+    font-size: 2rem;
+    text-align: center;
+}
+.main__button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #8ACFE5;
+    display: block;
+    margin: 50px auto 80px auto;
+    text-decoration: none;
+    padding: 20px 4px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 308px;
+    border: 2px solid #8ACFE5;
+    border-radius: 3px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.challenges__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.challenges {
+    display: flex;
+    flex-direction: column;
+    max-width: 364px;
+    margin: 0px 20px 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px 0px #B6BDB5;
+    height: 446px;
+    position: relative;
+}
+
+.challenges__content {
+    box-sizing: border-box;
+    padding: 15px;
+    
+}
+
+.challenge__title__container {
+    display: flex;
+    flex-direction: row;
+}
+
+.challenges__title {
+    font-weight: 400;
+    font-size: 28px;
+}
+.challenges__onsite {
+    margin-left: 5px;
+    font-weight: 400;
+    font-size: 28px;
+    min-width: 105px;
+}
+.challenges__image {
+    height: 240px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.challenges__participants__container {
+    display: flex;
+    flex-direction: row;
+}
+
+.challenges__participants {
+    font-size: 14px;
+   
+}
+.challenges__networked {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.challenges__description {
+    margin-top: 15px;
+    font-size: 17px;
+}
+
+.challenges__onsiteBtn ,.challenges__onlineBtn {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    
+    background-color: #E3170A;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    text-decoration: none;
+    line-height: 45px;
+    width: 180px;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+}
+
+

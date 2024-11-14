@@ -18,6 +18,8 @@ for (i = 0; i < data.challenges.length; i++) {
     const challengeContainer = document.createElement("article");
     challengeContainer.classList.add("challenges");
     challengesWrapper.appendChild(challengeContainer);
+    let challengeID = challenge.id;
+    challengeContainer.setAttribute("id", challengeID)
     
 
     const challengeImg = challenge.image;
@@ -26,18 +28,30 @@ for (i = 0; i < data.challenges.length; i++) {
     challengeImgDOM.setAttribute("src", challengeImg);
     challengeContainer.appendChild(challengeImgDOM);
 
+    const challengeContent = document.createElement("div");
+    challengeContent.classList.add("challenges__content");
+    challengeContainer.appendChild(challengeContent);
+
+    const challengeTitleContainer = document.createElement("div");
+    challengeTitleContainer.classList.add("challenge__title__container");
+    challengeContent.appendChild(challengeTitleContainer);
+
     const challengeTitle = challenge.title;
     const challengeTitleDOM = document.createElement("h3");
     challengeTitleDOM.classList.add("challenges__title");
     challengeTitleDOM.innerHTML = challengeTitle;
-    challengeContainer.appendChild(challengeTitleDOM);
+    challengeTitleContainer.appendChild(challengeTitleDOM);
 
     if (challenge.type.includes("onsite")) {
-        const onsite = document.createElement("span");
+        const onsite = document.createElement("h3");
         onsite.classList.add("challenges__onsite")
         onsite.innerHTML = "(on-site)";
-        challengeContainer.appendChild(onsite);
+        challengeTitleContainer.appendChild(onsite);
     }
+
+    const challengeParticipantsContainer = document.createElement("div");
+    challengeParticipantsContainer.classList.add("challenges__participants__container");
+    challengeContent.appendChild(challengeParticipantsContainer);
 
     const challengeParticipantsMin = challenge.minParticipants;
     const challengeParticipantsMax = challenge.maxParticipants;
@@ -45,29 +59,38 @@ for (i = 0; i < data.challenges.length; i++) {
     const challengeParticipantsDOM = document.createElement("p");
     challengeParticipantsDOM.classList.add("challenges__participants");
     challengeParticipantsDOM.innerHTML = `${challengeParticipantsMin}-${challengeParticipantsMax} participants`;
-    challengeContainer.appendChild(challengeParticipantsDOM);
+    challengeParticipantsContainer.appendChild(challengeParticipantsDOM);
+
+    if (challenge.type.includes("online")) {
+        const challengeNetworked = document.createElement("p");
+        challengeNetworked.innerHTML = " (networked)";
+        challengeNetworked.classList.add("challenges__networked");
+        challengeParticipantsContainer.appendChild(challengeNetworked);
+    }
 
     const challengeDescription = challenge.description;
     const challengeDescriptionDOM = document.createElement("p");
     challengeDescriptionDOM.classList.add("challenges__description");
     challengeDescriptionDOM.innerHTML = challengeDescription;
-    challengeContainer.appendChild(challengeDescriptionDOM);
+    challengeContent.appendChild(challengeDescriptionDOM);
 
     if (challenge.type.includes("onsite")) {
         const onsiteBtn = document.createElement("button");
-        onsiteBtn.classList.add("challenges__onsiteBtn")
+        onsiteBtn.classList.add("challenges__onsiteBtn");
         onsiteBtn.innerHTML = "Book this room";
-        challengeContainer.appendChild(onsiteBtn);
+        challengeContent.appendChild(onsiteBtn);
     }
     else {
         const onlineBtn = document.createElement("button");
         onlineBtn.classList.add("challenges__onlineBtn");
         onlineBtn.innerHTML = "Take challenge online";
-        challengeContainer.appendChild(onlineBtn);
+        challengeContent.appendChild(onlineBtn);
     }
 }
 
 }
+
+getAPI();
 console.log(challengesArray);
 
 

@@ -66,7 +66,12 @@ menuCrossLink.addEventListener('click', () => {
 });
 
 
+async function getAPI() {
+  const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
+  const data = await res.json(); 
+  console.log(data);
 
-
-
-
+  data.challenges.forEach((challenge) => {
+      challengesArray.push(challenge);
+  })
+}

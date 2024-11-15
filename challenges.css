@@ -105,4 +105,22 @@
     border: none;
 }
 
+.challenges__icon__onsite, .challenges__icon__online {
+    position: absolute;
+    width: 45px;
+    top: 15px;
+    right: 15px;
+    opacity: 0.8;
 
+}
+
+.challenge__rating__container{
+    transform: translateY(-35px);
+    margin-left: 15px;
+}
+
+.challenges__rating__empty__star, .challenge__rating__half__filled, .challenge__rating__filled {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+}

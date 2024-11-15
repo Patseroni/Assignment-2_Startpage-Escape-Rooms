@@ -66,12 +66,44 @@ menuCrossLink.addEventListener('click', () => {
 });
 
 
+
+
+const challengeArray = [];
+const sortedArray = [];
+
+console.log(challengeArray);
+
+
 async function getAPI() {
   const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
-  const data = await res.json(); 
-  console.log(data);
+  const data = await res.json();
 
   data.challenges.forEach((challenge) => {
-      challengesArray.push(challenge);
+    challengeArray.push(challenge);
   })
+
+  const SortArray = [];
+
+  for (let i = 0; i < challengeArray.length; i++) {
+
+    let sortedChallenge = challengeArray[i].rating
+    let sortedID = challengeArray[i].id
+    const SortObject = { id: sortedID, rating: sortedChallenge }
+
+
+    sortedArray.push(SortObject);
+    console.log(SortObject);
+  }
+  sortedArray.sort()
+
+
+  for (let i = 0; i < 3; i++) {
+    const maxValue = (Math.max.apply(null, sortedArray))
+    console.log(maxValue);
+    sortedArray.pop();
+    console.log(sortedArray)
+
+  }
 }
+
+getAPI();

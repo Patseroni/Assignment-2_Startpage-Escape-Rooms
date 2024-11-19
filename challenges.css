@@ -23,6 +23,23 @@
     cursor: pointer;
 }
 
+.popular-challenges__main-title {
+    padding-bottom: 50px;
+    padding-top: 80px;
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+    margin: 0px 15px;
+
+}
+
+.popular__challenges {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    overflow-x: auto;
+}
+
 .challenges__wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -37,13 +54,13 @@
     margin: 0px 20px 40px 20px;
     border-radius: 10px;
     box-shadow: 0px 2px 10px 0px #B6BDB5;
-    height: 446px;
+    height: 480px;
     position: relative;
 }
 
 .challenges__content {
     box-sizing: border-box;
-    padding: 15px;
+    padding: 0 15px 15px 15px;
     
 }
 
@@ -123,4 +140,4 @@
     margin-right: 5px;
     width: 20px;
     height: 20px;
-        }
+}

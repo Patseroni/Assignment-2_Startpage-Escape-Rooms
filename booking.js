@@ -54,7 +54,7 @@ fetchStuff();
 
 
 
-const bookingDate = '2024-12-12';
+
 
 async function fetchAvaliableTimesAndId(date, id){
     const respons = await fetch(`https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=${date}&challenge=${id}`);
@@ -62,21 +62,23 @@ async function fetchAvaliableTimesAndId(date, id){
     return data;
 }
 
+const bookingDate = '2024-12-12';
 async function printAvaliableTimesAndId(){
     const data = await fetchAvaliableTimesAndId(bookingDate, challengeIDBooking);
-    console.log(data);
+    console.log(bookingDate, challengeIDBooking);
 }
 
-printAvaliableTimesAndId();
 
+//printAvaliableTimesAndId();
 
-function openModal(challengeIDBooking) {
-    //modal.showModal();
-
-    return challengeIDBooking;
+/*
+function openModal() {
+    modal.showModal();   
 }
+*/
 
-console.log(openModal);
+
+
 
 
 /*

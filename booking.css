@@ -1,0 +1,38 @@
+.modal {
+    margin: auto;
+    padding-left: 20px;
+    padding-top: 20px;
+    border-color: rgba(128, 128, 128, 0.443);
+    border-width: 2px;
+    width: 500px;
+    font-family: "roboto", sans-serif;
+}
+
+.modal__title {
+    margin-bottom: 40px;
+    font-weight: lighter;
+
+}
+
+.modal__question {
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.modal__question,
+.input {
+    display: flex;
+}
+
+.input {
+    width: 150px;
+    height: 25px;
+    margin-bottom: 200px;
+}
+
+.modal__search {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0px 15px 15px 0px;
+}

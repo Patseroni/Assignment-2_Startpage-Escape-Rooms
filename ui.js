@@ -35,6 +35,7 @@ function createChallengeCard(challenge) {
     }
 
     if (challengeRating == 0.5) {
+
         const challengeRatingHalf = document.createElement("img");
         challengeRatingHalf.classList.add("challenge__rating__half__filled");
         challengeRatingHalf.setAttribute("src", "images/star-half.png");
@@ -255,8 +256,8 @@ function createChallengeCard(challenge) {
         onsiteBtn.addEventListener(
             "click",
             () => {
-                const challengeIDModal = challenge.id;
-                openModal();
+                const challengeIDBooking = challenge.id;
+                openModal(challengeIDBooking);
             }
         );
 
@@ -274,8 +275,9 @@ function createChallengeCard(challenge) {
         onlineBtn.addEventListener(
             "click",
             () => {
-                const challengeIDModal = challenge.id;
-                openModal(challengeIDModal);
+                const challengeIDBooking = challenge.id;
+                openModal(challengeIDBooking);
+                
             }
         );
 

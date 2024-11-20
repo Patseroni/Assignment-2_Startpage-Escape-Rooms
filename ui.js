@@ -8,7 +8,7 @@ function createChallengeCard(challenge) {
 
     const challengeID = challenge.id;
     challengeContainer.setAttribute("id", challengeID);
- 
+
     const challengeImg = challenge.image;
     const challengeImgDOM = document.createElement("img");
     challengeImgDOM.classList.add("challenges__image");
@@ -35,6 +35,7 @@ function createChallengeCard(challenge) {
     }
 
     if (challengeRating == 0.5) {
+
         const challengeRatingHalf = document.createElement("img");
         challengeRatingHalf.classList.add("challenge__rating__half__filled");
         challengeRatingHalf.setAttribute("src", "images/star-half.png");
@@ -85,11 +86,11 @@ function createChallengeCard(challenge) {
 
         for (let i = 0; i <= 1; i++) {
             const challengeRatingFilled = document.createElement("img");
-        challengeRatingFilled.classList.add("challenge__rating__filled");
-        challengeRatingFilled.setAttribute("src", "images/star-filled.png");
-        challengeRatingContainer.appendChild(challengeRatingFilled);
+            challengeRatingFilled.classList.add("challenge__rating__filled");
+            challengeRatingFilled.setAttribute("src", "images/star-filled.png");
+            challengeRatingContainer.appendChild(challengeRatingFilled);
         }
-        
+
         for (let i = 0; i <= 2; i++) {
             const challengeRatingEmptyStar = document.createElement("img");
             challengeRatingEmptyStar.classList.add("challenges__rating__empty__star");
@@ -101,16 +102,16 @@ function createChallengeCard(challenge) {
     if (challengeRating == 2.5) {
         for (let i = 0; i <= 1; i++) {
             const challengeRatingFilled = document.createElement("img");
-        challengeRatingFilled.classList.add("challenge__rating__filled");
-        challengeRatingFilled.setAttribute("src", "images/star-filled.png");
-        challengeRatingContainer.appendChild(challengeRatingFilled);
+            challengeRatingFilled.classList.add("challenge__rating__filled");
+            challengeRatingFilled.setAttribute("src", "images/star-filled.png");
+            challengeRatingContainer.appendChild(challengeRatingFilled);
         }
         const challengeRatingHalf = document.createElement("img");
         challengeRatingHalf.classList.add("challenge__rating__half__filled");
         challengeRatingHalf.setAttribute("src", "images/star-half.png");
         challengeRatingContainer.appendChild(challengeRatingHalf);
 
-        for (let i = 0; i <= 1 ; i++) {
+        for (let i = 0; i <= 1; i++) {
             const challengeRatingEmptyStar = document.createElement("img");
             challengeRatingEmptyStar.classList.add("challenges__rating__empty__star");
             challengeRatingEmptyStar.setAttribute("src", "images/star-empty.png");
@@ -121,12 +122,12 @@ function createChallengeCard(challenge) {
     if (challengeRating == 3) {
         for (let i = 0; i <= 2; i++) {
             const challengeRatingFilled = document.createElement("img");
-        challengeRatingFilled.classList.add("challenge__rating__filled");
-        challengeRatingFilled.setAttribute("src", "images/star-filled.png");
-        challengeRatingContainer.appendChild(challengeRatingFilled);
+            challengeRatingFilled.classList.add("challenge__rating__filled");
+            challengeRatingFilled.setAttribute("src", "images/star-filled.png");
+            challengeRatingContainer.appendChild(challengeRatingFilled);
         }
-        
-        for (let i = 0; i <= 1 ; i++) {
+
+        for (let i = 0; i <= 1; i++) {
             const challengeRatingEmptyStar = document.createElement("img");
             challengeRatingEmptyStar.classList.add("challenges__rating__empty__star");
             challengeRatingEmptyStar.setAttribute("src", "images/star-empty.png");
@@ -137,17 +138,17 @@ function createChallengeCard(challenge) {
     if (challengeRating == 3.5) {
         for (let i = 0; i <= 2; i++) {
             const challengeRatingFilled = document.createElement("img");
-        challengeRatingFilled.classList.add("challenge__rating__filled");
-        challengeRatingFilled.setAttribute("src", "images/star-filled.png");
-        challengeRatingContainer.appendChild(challengeRatingFilled);
+            challengeRatingFilled.classList.add("challenge__rating__filled");
+            challengeRatingFilled.setAttribute("src", "images/star-filled.png");
+            challengeRatingContainer.appendChild(challengeRatingFilled);
         }
 
         const challengeRatingHalf = document.createElement("img");
         challengeRatingHalf.classList.add("challenge__rating__half__filled");
         challengeRatingHalf.setAttribute("src", "images/star-half.png");
         challengeRatingContainer.appendChild(challengeRatingHalf);
-        
-        for (let i = 0; i < 1 ; i++) {
+
+        for (let i = 0; i < 1; i++) {
             const challengeRatingEmptyStar = document.createElement("img");
             challengeRatingEmptyStar.classList.add("challenges__rating__empty__star");
             challengeRatingEmptyStar.setAttribute("src", "images/star-empty.png");
@@ -158,12 +159,12 @@ function createChallengeCard(challenge) {
     if (challengeRating == 4) {
         for (let i = 0; i <= 3; i++) {
             const challengeRatingFilled = document.createElement("img");
-        challengeRatingFilled.classList.add("challenge__rating__filled");
-        challengeRatingFilled.setAttribute("src", "images/star-filled.png");
-        challengeRatingContainer.appendChild(challengeRatingFilled);
+            challengeRatingFilled.classList.add("challenge__rating__filled");
+            challengeRatingFilled.setAttribute("src", "images/star-filled.png");
+            challengeRatingContainer.appendChild(challengeRatingFilled);
         }
-        
-        for (let i = 0; i < 1 ; i++) {
+
+        for (let i = 0; i < 1; i++) {
             const challengeRatingEmptyStar = document.createElement("img");
             challengeRatingEmptyStar.classList.add("challenges__rating__empty__star");
             challengeRatingEmptyStar.setAttribute("src", "images/star-empty.png");
@@ -174,24 +175,24 @@ function createChallengeCard(challenge) {
     if (challengeRating == 4.5) {
         for (let i = 0; i <= 3; i++) {
             const challengeRatingFilled = document.createElement("img");
-        challengeRatingFilled.classList.add("challenge__rating__filled");
-        challengeRatingFilled.setAttribute("src", "images/star-filled.png");
-        challengeRatingContainer.appendChild(challengeRatingFilled);
+            challengeRatingFilled.classList.add("challenge__rating__filled");
+            challengeRatingFilled.setAttribute("src", "images/star-filled.png");
+            challengeRatingContainer.appendChild(challengeRatingFilled);
         }
 
         const challengeRatingHalf = document.createElement("img");
         challengeRatingHalf.classList.add("challenge__rating__half__filled");
         challengeRatingHalf.setAttribute("src", "images/star-half.png");
         challengeRatingContainer.appendChild(challengeRatingHalf);
-        
+
     }
 
     if (challengeRating == 5) {
         for (let i = 0; i <= 4; i++) {
             const challengeRatingFilled = document.createElement("img");
-        challengeRatingFilled.classList.add("challenge__rating__filled");
-        challengeRatingFilled.setAttribute("src", "images/star-filled.png");
-        challengeRatingContainer.appendChild(challengeRatingFilled);
+            challengeRatingFilled.classList.add("challenge__rating__filled");
+            challengeRatingFilled.setAttribute("src", "images/star-filled.png");
+            challengeRatingContainer.appendChild(challengeRatingFilled);
         }
     }
 
@@ -251,11 +252,14 @@ function createChallengeCard(challenge) {
         onsiteBtn.classList.add("challenges__onsiteBtn");
         onsiteBtn.innerHTML = "Book this room";
         challengeContent.appendChild(onsiteBtn);
+
         onsiteBtn.addEventListener(
             "click",
-            openModal,
+            () => {
+                const challengeIDBooking = challenge.id;
+                openModal(challengeIDBooking);
+            }
         );
- 
 
         const challengeIcon = document.createElement("img");
         challengeIcon.classList.add("challenges__icon__onsite");
@@ -267,12 +271,16 @@ function createChallengeCard(challenge) {
         onlineBtn.classList.add("challenges__onlineBtn");
         onlineBtn.innerHTML = "Take challenge online";
         challengeContent.appendChild(onlineBtn);
+
         onlineBtn.addEventListener(
             "click",
-            openModal,
+            () => {
+                const challengeIDBooking = challenge.id;
+                openModal(challengeIDBooking);
+                
+            }
         );
- 
-        
+
         const challengeIcon = document.createElement("img");
         challengeIcon.classList.add("challenges__icon__online");
         challengeIcon.setAttribute("src", "images/icon-online.png")

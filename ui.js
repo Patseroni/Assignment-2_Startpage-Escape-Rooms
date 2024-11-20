@@ -251,6 +251,11 @@ function createChallengeCard(challenge) {
         onsiteBtn.classList.add("challenges__onsiteBtn");
         onsiteBtn.innerHTML = "Book this room";
         challengeContent.appendChild(onsiteBtn);
+        onsiteBtn.addEventListener(
+            "click",
+            openModal,
+        );
+ 
 
         const challengeIcon = document.createElement("img");
         challengeIcon.classList.add("challenges__icon__onsite");
@@ -262,6 +267,11 @@ function createChallengeCard(challenge) {
         onlineBtn.classList.add("challenges__onlineBtn");
         onlineBtn.innerHTML = "Take challenge online";
         challengeContent.appendChild(onlineBtn);
+        onlineBtn.addEventListener(
+            "click",
+            openModal,
+        );
+ 
         
         const challengeIcon = document.createElement("img");
         challengeIcon.classList.add("challenges__icon__online");

@@ -63,7 +63,7 @@ modalSubmit.innerText = "Submit booking";
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 const modalTitle2 = document.createElement("h1");
-modalTitle2.classList.add("modal__title");
+modalTitle2.classList.add("modal2__title");
 modals.modal2.appendChild(modalTitle2);
 modalTitle2.innerText = "Book room \"Escape room\" (step 2)";
 

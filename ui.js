@@ -271,7 +271,7 @@ function createChallengeCard(challenge) {
             "click",
             openModal,
         );
- 
+      
         
         const challengeIcon = document.createElement("img");
         challengeIcon.classList.add("challenges__icon__online");

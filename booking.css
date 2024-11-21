@@ -1,4 +1,11 @@
+#div {
+    opacity: 0;
+}
+
+
 .modal {
+    display: flex;
+    flex-direction: column;
     margin: auto;
     padding-left: 30px;
     padding-top: 30px;
@@ -9,25 +16,25 @@
     font-family: "roboto", sans-serif;
 }
 
+
 .modal__title {
     margin-bottom: 40px;
     font-weight: normal;
     font-size: 20px;
 }
 
+
 .modal__question {
     margin-bottom: 30px;
     font-size: 16px;
 }
+
 
 .modal__question,
 .input {
     display: flex;
 }
 
-.modal__date {
-    font-size: 14px;
-}
 
 .input {
     width: 150px;
@@ -35,16 +42,14 @@
     margin-bottom: 200px;
     border-color: rgb(187, 185, 185);
     border-radius: 3px;
-
-
 }
+
 
 .modal__search {
     position: absolute;
     bottom: 0;
     right: 0;
     margin: 0px 15px 15px 0px;
-
     background-color: #E3170A;
     text-align: center;
     line-height: 40px;
@@ -60,9 +65,41 @@
     cursor: pointer;
 }
 
+
 .modal__message {
-    padding-top: 30%;
-    margin: auto;
-    width: 200px;
+    margin-top: 150px;
+    margin-left: 200px;
     font-weight: normal;
+}
+
+
+.modal__text {
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.select__input {
+    width: 150px;
+    height: 30px;
+    border-color: rgb(187, 185, 185);
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+
+.input__step2 {
+    width: 250px;
+    height: 30px;
+    border-color: rgb(187, 185, 185);
+    border-radius: 3px;
+}
+
+
+.link {
+    margin-top: 50px;
+    margin-left: 212px;
+    font-weight: normal;
+    color: #8ACFE5;
 }

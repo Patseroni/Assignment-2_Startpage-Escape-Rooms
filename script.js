@@ -86,37 +86,3 @@ async function initTopThree() {
         createChallengeCard(challengesArray[i]);
     }
 }
-
-
-
-
-
-
-
-
-/*
-
-getAPI();
-
-async function getAPI() {
-  const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
-  const data = await res.json(); 
-
-  const challengesArray = [];
-
-  data.challenges.forEach((challenge) => {
-      challengesArray.push(challenge);
-  })
-
-    challengesArray.sort((a, b) => b.rating - a.rating);
-
-    
-    for (let i = 0; i < 3; i++) {
-
-        const challenge = challengesArray[i];
-       
-        createChallengeCard(challenge);
-
-    }
-}
-*/

@@ -256,8 +256,7 @@ function createChallengeCard(challenge) {
         onsiteBtn.addEventListener(
             "click",
             () => {
-                const challengeIDBooking = challenge.id;
-                openModal(challengeIDBooking);
+                openModal(challenge);
             }
         );
 
@@ -275,9 +274,7 @@ function createChallengeCard(challenge) {
         onlineBtn.addEventListener(
             "click",
             () => {
-                const challengeIDBooking = challenge.id;
-                openModal(challengeIDBooking);
-                
+                openModal(challenge);
             }
         );
 

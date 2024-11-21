@@ -257,7 +257,9 @@ function createChallengeCard(challenge) {
             "click",
             () => {
                 const challengeIDBooking = challenge.id;
-                openModal(challengeIDBooking);
+                const challengeParticipantsMin = challenge.minParticipants;
+                const challengeParticipantsMax = challenge.maxParticipants;
+                openModal(challengeIDBooking, challengeParticipantsMin, challengeParticipantsMax);
             }
         );
 
@@ -276,7 +278,9 @@ function createChallengeCard(challenge) {
             "click",
             () => {
                 const challengeIDBooking = challenge.id;
-                openModal(challengeIDBooking);
+                const challengeParticipantsMin = challenge.minParticipants;
+                const challengeParticipantsMax = challenge.maxParticipants;
+                openModal(challengeIDBooking, challengeParticipantsMin, challengeParticipantsMax);
                 
             }
         );

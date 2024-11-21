@@ -256,10 +256,7 @@ function createChallengeCard(challenge) {
         onsiteBtn.addEventListener(
             "click",
             () => {
-                const challengeIDBooking = challenge.id;
-                const challengeParticipantsMin = challenge.minParticipants;
-                const challengeParticipantsMax = challenge.maxParticipants;
-                openModal(challengeIDBooking, challengeParticipantsMin, challengeParticipantsMax);
+                openModal(challenge);
             }
         );
 
@@ -277,11 +274,7 @@ function createChallengeCard(challenge) {
         onlineBtn.addEventListener(
             "click",
             () => {
-                const challengeIDBooking = challenge.id;
-                const challengeParticipantsMin = challenge.minParticipants;
-                const challengeParticipantsMax = challenge.maxParticipants;
-                openModal(challengeIDBooking, challengeParticipantsMin, challengeParticipantsMax);
-                
+                openModal(challenge);
             }
         );
 

@@ -1,5 +1,3 @@
-let challengeIDBooking = null;
-
 function createChallengeCard(challenge) {
 
     const challengesWrapper = document.querySelector(".challenges__wrapper");
@@ -249,7 +247,6 @@ function createChallengeCard(challenge) {
     challengeDescriptionDOM.innerHTML = challengeDescription;
     challengeContent.appendChild(challengeDescriptionDOM);
 
-
     if (challenge.type.includes("onsite")) {
         const onsiteBtn = document.createElement("button");
         onsiteBtn.classList.add("challenges__onsiteBtn");
@@ -259,20 +256,15 @@ function createChallengeCard(challenge) {
         onsiteBtn.addEventListener(
             "click",
             () => {
-                challengeIDBooking = challenge.id;
-                printAvaliableTimesAndId();
-                //openModal(challengeIDBooking);
+                openModal(challenge);
             }
         );
-        
-
 
         const challengeIcon = document.createElement("img");
         challengeIcon.classList.add("challenges__icon__onsite");
         challengeIcon.setAttribute("src", "images/icon-onsite.png")
         challengeContainer.appendChild(challengeIcon);
     }
-
     else {
         const onlineBtn = document.createElement("button");
         onlineBtn.classList.add("challenges__onlineBtn");
@@ -282,8 +274,7 @@ function createChallengeCard(challenge) {
         onlineBtn.addEventListener(
             "click",
             () => {
-                const challengeIDBooking = challenge.id;
-                openModal(challengeIDBooking);
+                openModal(challenge);
             }
         );
 

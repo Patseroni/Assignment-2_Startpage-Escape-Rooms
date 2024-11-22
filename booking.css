@@ -17,6 +17,22 @@
 }
 
 
+.close__button {
+position: absolute;
+top: 5px;
+right: 10px;
+border: none;
+font-size: 24px;
+background: none;
+cursor: pointer;
+}
+
+
+.close__button:hover {
+    color: rgba(0, 0, 0, 0.303);
+}
+
+
 .modal__title {
     margin-bottom: 40px;
     font-weight: normal;
@@ -50,7 +66,6 @@
     border-radius: 3px;
 }
 
-
 .modal__search {
     position: absolute;
     bottom: 0;
@@ -69,6 +84,11 @@
     font-weight: bold;
     border: none;
     cursor: pointer;
+}
+
+
+.modal__search:hover {
+    background-color: #e13b2f;
 }
 
 

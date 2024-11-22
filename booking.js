@@ -6,6 +6,11 @@ function createModal1(challenge) {
     modal1.classList.add("modal");
     div.appendChild(modal1);
 
+    const closeBtn = document.createElement("button");
+    closeBtn.classList.add("close__button");
+    modal1.appendChild(closeBtn);
+    closeBtn.innerText = "X";
+
     const modalTitle = document.createElement("h1");
     modalTitle.classList.add("modal__title");
     modal1.appendChild(modalTitle);
@@ -23,6 +28,7 @@ function createModal1(challenge) {
 
     const input = document.createElement("input");
     input.classList.add("input");
+    input.type = "date";
     modal1.appendChild(input);
 
     const modalSearch = document.createElement("button");
@@ -62,6 +68,10 @@ function createModal1(challenge) {
         modal2.showModal();
     });
 
+    closeBtn.addEventListener("click", () => {
+        modal1.close();
+    });
+
     return modal1;
 }
 
@@ -72,6 +82,11 @@ function createModal2(challenge, availableTimes) {
     modal2.classList.add("modal");
     div.appendChild(modal2);
 
+    const closeBtn = document.createElement("button");
+    closeBtn.classList.add("close__button");
+    modal2.appendChild(closeBtn);
+    closeBtn.innerText = "X";
+    
     const modalTitle2 = document.createElement("h1");
     modalTitle2.classList.add("modal2__title");
     modal2.appendChild(modalTitle2);
@@ -157,6 +172,10 @@ function createModal2(challenge, availableTimes) {
         modal3.showModal();
     });
 
+    closeBtn.addEventListener("click", () => {
+        modal2.close();
+    });
+
     return modal2;
 }
 
@@ -178,7 +197,7 @@ function createModal3() {
     link.classList.add("link");
     modal3.appendChild(link);
     link.innerText = "Back to challenges";
-    link.href = "http://127.0.0.1:5502/frontpage.html#";
+    link.href = "http://127.0.0.1:5502/challenges.html";
 
     link.addEventListener("click", () => {
         modal3.close();

@@ -1,0 +1,148 @@
+/* Grundläggande layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    text-align: center;
+}
+
+/* Styla huvudknappen */
+.main__button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #8ACFE5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* För att skapa effekt när man hovrar på knappen */
+.main__button:hover {
+    background-color: #6aaed7;
+}
+
+h3{
+    text-align: left;
+}
+
+h5{
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+
+/* Modalens huvudstruktur */
+.filter-modal {
+    display: flex;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Innehållsrutan för modalen */
+.filter-modal__content {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid rgb(118, 115, 115);
+    border-radius: 10px; /*rundade hörn*/
+    width: 70%;
+    position:fixed;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Stängknappen */
+.filter-modal__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+.by_type{
+    display: flex;
+    flex-direction: column;
+    align-content: baseline;
+    align-items: flex-start;
+}
+
+.by_rating {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Filter-taggar */
+.filters {
+    display: flex;
+    flex-direction: column;   /*stampla taggarna vertikal*/
+    align-items: flex-end; /*placerar rubben och taggarna till höger*/
+}
+
+.search_input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #333;
+    border-width: 50px;
+}
+input {
+    font-size: medium;
+    border-radius: 5px;
+    height: 25px;
+}
+
+
+.filter__tag {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 5px 15px;
+    border-radius: 20px;  /* Rundade hörn */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter__tag:hover {
+    background-color: #ccc; /* Hover-effekt */
+}
+
+/* Eventuellt fokus-beteende */
+.filter__tag:focus {
+    outline: none; /* Ta bort fokusram om så önskas */
+}
+
+
+/* För att skapa en container för rutorna */
+.boxes form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styla själva kryssrutorna */
+input[type="checkbox"] {
+    margin-right: 10px; /* Avstånd mellan kryssrutan och texten */
+}
+
+/* Styla etiketten (texten) */
+.checkbox-label {
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}

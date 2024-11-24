@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Challenges</title>
+    <link rel="stylesheet" href="filter.css">
+</head>
+
+<body>
+    <main class="main">
+        <button class="main__button">Filter Challenges</button>
+        <!-- Modal för filter -->
+        <div class="filter-modal">
+            <div class="filter-modal__content">
+                <span class="filter-modal__close" id="closeButton">&times;</span>
+            <h3 id="modal_title">Filter challenges</h3>
+                <!---By type -->
+                <div class="by_type">
+                    <form>
+                        <h5 id="type_title">By type</h5>
+                        <p>
+                            <input type="checkbox" id="online" name="onlinebox">
+                            <label for="onlinebox">Include online challenges</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="onsite" name="onsitebox">
+                            <label for="onsitebox">Include on-site challenges</label>
+                        </p>
+                    </form>
+                </div>
+                <!----By Rating-->
+                <div class="by_rating">
+                    <h5 id="rating_title">By rating</h5>
+                </div>
+                <div class="filters">
+                    <h5 id="tag_title">By tags</h5>
+                    <span class="filter__tag" id="webTag">Web</span>
+                    <span class="filter__tag" id="linuxTag">Linux</span>
+                    <span class="filter__tag" id="cryptographyTag">Cryptography</span>
+                    <span class="filter__tag" id="codingTag">Coding</span>
+                    <span class="filter__tag" id="someOtherTag">Some other tag</span>
+                    <span class="filter__tag" id="finalTag">A final tag</span>
+                </div>
+                <div class="search_input">
+                    <h5 id="search_title">Or type to search for keyword</h5>
+                    <input type="text" placeholder="Start typing to filter">
+                </div>
+        </div>      
+    </main>
+    <script src="filter.js"></script>
+</body>
+
+</html>

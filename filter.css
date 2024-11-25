@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,36 +12,20 @@ body {
 
 .main {
     text-align: center;
+    overflow: auto;
 }
 
-/* FILTER-knappen */
-.main__button {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #8ACFE5;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-/* Effect hover button på knappen */
-.main__button:hover {
-    background-color: #6aaed7;
-}
 
 /* Filter Box */
 .filter_box {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    padding-top: 20px;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     visibility: visible;
     opacity: 1;
     transition: opacity 0.3s, visibility 0.3s;
@@ -50,17 +34,29 @@ body {
 .filter_box_content {
     background-color: white;
     padding: 30px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
+    width: 100%;
+    max-width: 1200px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
 
     /* Flexbox for layout */
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Space between sections */
+    gap: 30px; /* Space between sections */
     justify-content: space-between;
     align-items: flex-start; /* Align items to the top */
+}
+
+/* Close Button */
+.filter_box_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    z-index: 1100; /* Se till att knappen är ovanpå andra element */
 }
 
 /* Box Title */
@@ -84,21 +80,33 @@ body {
     margin-bottom: 10px;
 }
 
-/* By Type Section */
+/* By Type */
 .by_type p {
     margin: 5px 0;
 }
 
-/* By Rating */
-.rating_stars {
-    font-size: 1.5rem;
-    color: #f1c40f;
-    text-align: left;
+
+.by_rating {
+    font-size: 1.5rem; /* Justera stjärnornas storlek */
+    display: flex;
+    gap: 10px; /* Mellanrum mellan stjärnorna */
 }
+
+
+
+.star:hover {
+    background-color: #ffd700; /* Guld-färg när man hovrar */
+}
+
+.star.filled {
+    background-color: #ffd700; /* Fyll stjärnan med guld när den är vald */
+}
+
+
 
 /* Search Input */
 .search_input input {
-    width: 100%;
+    width: 50%;
     padding: 8px;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -118,7 +126,13 @@ body {
     gap: 10px;
 }
 
+.by_tags_title{
+    font-weight: bold;
+
+
+}
 .filter__tag {
+    font-weight: normal;
     background-color: #f0f0f0;
     color: #333;
     padding: 5px 15px;
@@ -126,19 +140,11 @@ body {
     font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.3s;
+   
 }
 
 .filter__tag:hover {
     background-color: #ccc;
 }
 
-/* Close Button */
-.filter_box_close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    color: #333;
-}
+

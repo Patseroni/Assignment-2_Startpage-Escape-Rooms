@@ -11,7 +11,7 @@ filterButton.addEventListener('click', () => {
 
 // Eventlyssnare för att stänga rutan vid klick på stängningsknappen
 closeButton.addEventListener('click', () => {
-    filterBox.style.display = 'none'; // Dölj modalrutan
+    filterBox.style.display = 'none'; // 
     filterButton.style.display = 'block';
 });
 
@@ -27,3 +27,7 @@ document.getElementById('onsiteButton').addEventListener('click', () => {
 document.getElementById('completedButton').addEventListener('click', () => {
     console.log('Filtrerar genomförda utmaningar');
 });
+
+
+// filter.js
+

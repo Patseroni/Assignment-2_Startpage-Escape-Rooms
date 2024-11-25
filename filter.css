@@ -13,7 +13,7 @@ body {
     text-align: center;
 }
 
-/* Styla huvudknappen */
+/* FILTER-knappen */
 .main__button {
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -25,7 +25,7 @@ body {
     transition: background-color 0.3s;
 }
 
-/* För att skapa effekt när man hovrar på knappen */
+/* Effekt när man hovrar på knappen */
 .main__button:hover {
     background-color: #6aaed7;
 }
@@ -40,9 +40,10 @@ h5{
 }
 
 
-/* Modalens huvudstruktur */
+/* Boxens struktur */
 .filter_box {
     display: flex;
+    align-items: flex-start; 
     place-items: center;
     position: fixed;
     top: 0;
@@ -50,19 +51,73 @@ h5{
     width: 100%;
     height: 100%;
     background-color: transparent;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
 }
 
-/* Innehållsrutan för modalen */
+/* Innehåll för boxen */
 .filter_box_content {
     background-color: white;
     padding: 20px;
     border: 1px solid rgb(118, 115, 115);
-    border-radius: 10px; /*rundade hörn*/
+    border-radius: 10px; /* Rundade hörn */
     width: 70%;
-    position:fixed;
+    position: fixed;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Flexbox för layout */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; /* Avstånd mellan kolumner */
+}
+
+.by_type, .by_rating, .by_tags, .search_input{
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    text-align: center; 
+}
+
+.by_type{
+    
+}
+
+.by_rating {
+    
+}
+
+ /* 
+    RATING STJÄRNORNA 
+    .challenge__rating__container{
+        transform: translateY(-35px);
+        margin-left: 15px;
+    }
+    
+    .challenges__rating__empty__star, .challenge__rating__half__filled, .challenge__rating__filled {
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+    }   
+    
+*/ 
+
+
+/* Filter-taggar */
+.by_tags {
+    align-items: flex-end; /*placerar rubben och taggarna till höger*/
+}
+
+.search_input {
+    align-items: center;
+    border: #333;
+    border-width: 50px;
+}
+input {
+    font-size: medium;
+    border-radius: 5px;
+    height: 25px;
 }
 
 /* Stängknappen */
@@ -75,55 +130,11 @@ h5{
 }
 
 
-.by_type{
-    display: flex;
-    flex-direction: column;
-    align-content: baseline;
-    align-items: flex-start;
-}
-
-.by_rating {
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-
-
-    .challenge__rating__container{
-        transform: translateY(-35px);
-        margin-left: 15px;
-    }
-    
-    .challenges__rating__empty__star, .challenge__rating__half__filled, .challenge__rating__filled {
-        margin-right: 5px;
-        width: 20px;
-        height: 20px;
-    }
-}
-/* Filter-taggar */
-.by_tags {
-    display: flex;
-    flex-direction: column;   /*stampla taggarna vertikal*/
-    align-items: flex-end; /*placerar rubben och taggarna till höger*/
-}
-
-.search_input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: #333;
-    border-width: 50px;
-}
-input {
-    font-size: medium;
-    border-radius: 5px;
-    height: 25px;
-}
 
 
 .filter__tag {
     background-color: #f0f0f0;
+    flex-direction: row;
     color: #333;
     padding: 5px 15px;
     border-radius: 20px;  /* Rundade hörn */
@@ -136,24 +147,24 @@ input {
     background-color: #ccc; /* Hover-effekt */
 }
 
-/* Eventuellt fokus-beteende */
+/* fokusram */
 .filter__tag:focus {
-    outline: none; /* Ta bort fokusram om så önskas */
+    outline: none; 
 }
 
 
-/* För att skapa en container för rutorna */
+/* container för rutorna */
 .boxes form {
     display: flex;
     flex-direction: column;
 }
 
-/* Styla själva kryssrutorna */
+/* Styling kryssrutorna */
 input[type="checkbox"] {
     margin-right: 10px; /* Avstånd mellan kryssrutan och texten */
 }
 
-/* Styla etiketten (texten) */
+
 .checkbox-label {
     display: inline-block;
     font-size: 16px;

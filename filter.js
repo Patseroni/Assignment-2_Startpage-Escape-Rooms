@@ -3,13 +3,13 @@ const filterButton = document.querySelector('.main__button');
 const filterBox = document.querySelector('.filter_box');
 const closeButton = document.getElementById('close_button');
 
-// Lägg till eventlyssnare för att öppna rutan när användaren klickar på huvudknappen
+// Eventlyssnare för att öppna rutan vid klick på huvudknappen
 filterButton.addEventListener('click', () => {
     filterBox.style.display = 'flex'; // Visa modalrutan
     filterButton.style.display = 'none';
 });
 
-// Lägg till eventlyssnare för att stänga rutan när användaren klickar på stängningsknappen
+// Eventlyssnare för att stänga rutan vid klick på stängningsknappen
 closeButton.addEventListener('click', () => {
     filterBox.style.display = 'none'; // Dölj modalrutan
     filterButton.style.display = 'block';

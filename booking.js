@@ -147,7 +147,7 @@ async function postReservations(){
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            challenge: 12,
+            challenge: challenge.id,
             name: "Customer Name",
             email: "name@example.com",
             date: "2022-12-12",

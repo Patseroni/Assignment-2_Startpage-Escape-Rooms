@@ -1,4 +1,4 @@
-/* Grundläggande layout */
+/* core layout */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -42,9 +42,9 @@ body {
     /* Flexbox for layout */
     display: flex;
     flex-wrap: wrap;
-    gap: 30px; /* Space between sections */
+    gap: 30px; 
     justify-content: space-between;
-    align-items: flex-start; /* Align items to the top */
+    align-items: flex-start; 
 }
 
 /* Close Button */
@@ -56,7 +56,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     color: #333;
-    z-index: 1100; /* Se till att knappen är ovanpå andra element */
+    z-index: 1100; /* button above other elements */
 }
 
 /* Box Title */
@@ -86,21 +86,7 @@ body {
 }
 
 
-.by_rating {
-    font-size: 1.5rem; /* Justera stjärnornas storlek */
-    display: flex;
-    gap: 10px; /* Mellanrum mellan stjärnorna */
-}
 
-
-
-.star:hover {
-    background-color: #ffd700; /* Guld-färg när man hovrar */
-}
-
-.star.filled {
-    background-color: #ffd700; /* Fyll stjärnan med guld när den är vald */
-}
 
 
 
@@ -149,6 +135,23 @@ body {
 .filter__tag:hover {
     background-color: #ccc;
 }
+ 
 
+#to_rating_star {
+    font-size: 0.8rem; 
+    font-weight: 300; 
+    margin: 0 10px; 
+}
+
+.rating_stars {
+    display: flex; /* Flexbox tp make elementen stay put on same row*/
+    align-items: center; 
+    gap: 5px; 
+}
+
+.rating_stars img {
+    width: 20px; 
+    height: auto; 
+}
 
 

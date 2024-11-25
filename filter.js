@@ -29,5 +29,4 @@ document.getElementById('completedButton').addEventListener('click', () => {
 });
 
 
-// filter.js
 

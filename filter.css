@@ -7,6 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f5f5f5;
 }
 
 .main {
@@ -25,148 +26,119 @@ body {
     transition: background-color 0.3s;
 }
 
-/* Effekt när man hovrar på knappen */
+/* Effect hover button på knappen */
 .main__button:hover {
     background-color: #6aaed7;
 }
 
-h3{
-    text-align: left;
-}
-
-h5{
-    text-align: right;
-    margin-bottom: 10px;
-}
-
-
-/* Boxens struktur */
+/* Filter Box */
 .filter_box {
     display: flex;
-    align-items: flex-start; 
-    place-items: center;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: transparent;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s, visibility 0.3s;
 }
 
-/* Innehåll för boxen */
 .filter_box_content {
     background-color: white;
-    padding: 20px;
-    border: 1px solid rgb(118, 115, 115);
-    border-radius: 10px; /* Rundade hörn */
-    width: 70%;
-    position: fixed;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-    /* Flexbox för layout */
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 20px; /* Avstånd mellan kolumner */
-}
-
-.by_type, .by_rating, .by_tags, .search_input{
-    flex: 1; 
+    /* Flexbox for layout */
     display: flex;
-    flex-direction: column; 
-    text-align: center; 
+    flex-wrap: wrap;
+    gap: 20px; /* Space between sections */
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
 }
 
-.by_type{
-    
+/* Box Title */
+.filter_box_title {
+    flex-basis: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
-.by_rating {
-    
+/* Section Styling */
+.section {
+    flex: 1 1 45%; 
+    min-width: 200px; /* Prevent sections from getting too small */
 }
 
- /* 
-    RATING STJÄRNORNA 
-    .challenge__rating__container{
-        transform: translateY(-35px);
-        margin-left: 15px;
-    }
-    
-    .challenges__rating__empty__star, .challenge__rating__half__filled, .challenge__rating__filled {
-        margin-right: 5px;
-        width: 20px;
-        height: 20px;
-    }   
-    
-*/ 
-
-
-/* Filter-taggar */
-.by_tags {
-    align-items: flex-end; /*placerar rubben och taggarna till höger*/
+.section h5 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.search_input {
-    align-items: center;
-    border: #333;
-    border-width: 50px;
+/* By Type Section */
+.by_type p {
+    margin: 5px 0;
 }
-input {
-    font-size: medium;
+
+/* By Rating */
+.rating_stars {
+    font-size: 1.5rem;
+    color: #f1c40f;
+    text-align: left;
+}
+
+/* Search Input */
+.search_input input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    height: 25px;
 }
 
-/* Stängknappen */
-.filter_box_close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
+/* By Tags */
+.by_tags {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-
-
+.tags_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
 .filter__tag {
     background-color: #f0f0f0;
-    flex-direction: row;
     color: #333;
     padding: 5px 15px;
-    border-radius: 20px;  /* Rundade hörn */
-    font-size: 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .filter__tag:hover {
-    background-color: #ccc; /* Hover-effekt */
+    background-color: #ccc;
 }
 
-/* fokusram */
-.filter__tag:focus {
-    outline: none; 
-}
-
-
-/* container för rutorna */
-.boxes form {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Styling kryssrutorna */
-input[type="checkbox"] {
-    margin-right: 10px; /* Avstånd mellan kryssrutan och texten */
-}
-
-
-.checkbox-label {
-    display: inline-block;
-    font-size: 16px;
+/* Close Button */
+.filter_box_close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
     cursor: pointer;
+    color: #333;
 }

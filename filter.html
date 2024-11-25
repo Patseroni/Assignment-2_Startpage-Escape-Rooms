@@ -11,12 +11,15 @@
 <body>
     <main class="main">
         <button class="main__button">Filter Challenges</button>
-        <!-- Modal för filter -->
-        <div class="filter-modal">
-            <div class="filter-modal__content">
-                <span class="filter-modal__close" id="closeButton">&times;</span>
-            <h3 id="modal_title">Filter challenges</h3>
-                <!---By type -->
+        
+        <!-- Box for filter -->
+        <div class="filter_box">
+            <div class="filter_box_content">
+                <span class="filter_box_close" id="close_button">&times;</span>
+            <h3 id="box_title">Filter challenges</h3>
+                
+            
+            <!---By type -->
                 <div class="by_type">
                     <form>
                         <h5 id="type_title">By type</h5>
@@ -30,11 +33,13 @@
                         </p>
                     </form>
                 </div>
+               
                 <!----By Rating-->
                 <div class="by_rating">
                     <h5 id="rating_title">By rating</h5>
                 </div>
-                <div class="filters">
+                
+                <div class="by_tags">
                     <h5 id="tag_title">By tags</h5>
                     <span class="filter__tag" id="webTag">Web</span>
                     <span class="filter__tag" id="linuxTag">Linux</span>
@@ -43,9 +48,10 @@
                     <span class="filter__tag" id="someOtherTag">Some other tag</span>
                     <span class="filter__tag" id="finalTag">A final tag</span>
                 </div>
+                
                 <div class="search_input">
                     <h5 id="search_title">Or type to search for keyword</h5>
-                    <input type="text" placeholder="Start typing to filter">
+                    <input type="input_text" placeholder="Start typing to filter">
                 </div>
         </div>      
     </main>

@@ -1,17 +1,17 @@
 // Hämta element från DOM
 const filterButton = document.querySelector('.main__button');
-const filterModal = document.querySelector('.filter-modal');
-const closeButton = document.getElementById('closeButton');
+const filterBox = document.querySelector('.filter_box');
+const closeButton = document.getElementById('close_button');
 
-// Lägg till eventlyssnare för att öppna modalrutan när användaren klickar på huvudknappen
+// Lägg till eventlyssnare för att öppna rutan när användaren klickar på huvudknappen
 filterButton.addEventListener('click', () => {
-    filterModal.style.display = 'flex'; // Visa modalrutan
+    filterBox.style.display = 'flex'; // Visa modalrutan
     filterButton.style.display = 'none';
 });
 
-// Lägg till eventlyssnare för att stänga modalrutan när användaren klickar på stängningsknappen
+// Lägg till eventlyssnare för att stänga rutan när användaren klickar på stängningsknappen
 closeButton.addEventListener('click', () => {
-    filterModal.style.display = 'none'; // Dölj modalrutan
+    filterBox.style.display = 'none'; // Dölj modalrutan
     filterButton.style.display = 'block';
 });
 

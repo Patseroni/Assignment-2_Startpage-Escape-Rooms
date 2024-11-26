@@ -16,17 +16,6 @@ closeButton.addEventListener('click', () => {
 });
 
 // Eventlyssnare för filterknappar
-document.getElementById('onlineButton').addEventListener('click', () => {
-    console.log('Filtrerar online-utmaningar');
-});
-
-document.getElementById('onsiteButton').addEventListener('click', () => {
-    console.log('Filtrerar on-site-utmaningar');
-});
-
-document.getElementById('completedButton').addEventListener('click', () => {
-    console.log('Filtrerar genomförda utmaningar');
-});
 
 const onlineCheckbox = document.querySelector(".online")
 const onsiteCheckbox = document.querySelector(".onsite")

@@ -64,7 +64,7 @@ function createModal1(challenge) {
 
         modal1.close();
 
-        const modal2 = createModal2(challenge, availableTimes);
+        const modal2 = createModal2(challenge, availableTimes, date);
         modal2.showModal();
     });
 
@@ -75,7 +75,7 @@ function createModal1(challenge) {
     return modal1;
 }
 
-function createModal2(challenge, availableTimes) {
+function createModal2(challenge, availableTimes, date) {
     const div = document.querySelector("#div");
 
     const modal2 = document.createElement("dialog");
@@ -165,11 +165,23 @@ function createModal2(challenge, availableTimes) {
     modal2.appendChild(modalSubmit);
     modalSubmit.innerText = "Submit booking";
 
-    modalSubmit.addEventListener("click", () => {
-        modal2.close();
+     modalSubmit.addEventListener("click", async () => {
 
+        const challengeID = challenge.id;
+        const inputNameValue = inputName.value;
+        const inputEmailValue = inputEmail.value;
+        const dateValue = date;
+        const selectTimeValue = selectTime.value;
+        const selectParticipantsValue = parseInt(selectParticipants.value, 10);
+
+        const res = await postReservations(challengeID, inputNameValue, inputEmailValue, dateValue, selectTimeValue, selectParticipantsValue);
+        const data = await res.json();
+        console.log(data);
+
+        modal2.close();  
         const modal3 = createModal3();
         modal3.showModal();
+        // logReservations();
     });
 
     closeBtn.addEventListener("click", () => {
@@ -197,7 +209,7 @@ function createModal3() {
     link.classList.add("link");
     modal3.appendChild(link);
     link.innerText = "Back to challenges";
-    link.href = "http://127.0.0.1:5502/challenges.html";
+    link.href = "challenges.html";
 
     link.addEventListener("click", () => {
         modal3.close();
@@ -212,3 +224,35 @@ function openModal(challenge) {
 
     return challenge;
 }
+
+async function postReservations(id, name, email, date, time, nrOfparticipants){
+    const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/booking/reservations', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            challenge: id,
+            name: name,
+            email: email,
+            date: date,
+            time: time,
+            participants: nrOfparticipants,
+        }),
+    });
+    if (!res.ok) {
+        throw new Error(`Failed: ${res.statusText}`);
+    }
+    else{
+        return res;
+    }
+}
+
+// async function logReservations(){
+//     const res = await postReservations(challengeID, inputNameValue, inputEmailValue, inputValue, selectTimeValue, selectParticipantsValue);
+//     const data = await res.json();
+//     console.log(data);
+// }
+
+
+

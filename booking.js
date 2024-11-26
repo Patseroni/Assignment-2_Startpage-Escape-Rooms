@@ -1,3 +1,23 @@
+function openModal(challenge) {
+    const modal1 = createModal1(challenge);
+    modal1.showModal();
+
+    return challenge;
+}
+
+function noAvailableTimeSlots(modal1) {
+
+    let noAvailableTime = modal1.querySelector(".modal__noAvailableTime");
+
+    if (!noAvailableTime) {
+        noAvailableTime = document.createElement("p");
+        noAvailableTime.classList.add("modal__noAvailableTime");
+        modal1.appendChild(noAvailableTime);
+    }
+
+    noAvailableTime.innerText = "Unfortunately, all times are fully booked for this day. Please try selecting another day.";
+}
+
 function createModal1(challenge) {
 
     const div = document.querySelector("#div");
@@ -36,26 +56,9 @@ function createModal1(challenge) {
     modal1.appendChild(modalSearch);
     modalSearch.innerText = "Search available times";
 
-    function noAvailableTimeSlots(modal1) {
-
-        let noAvailableTime = modal1.querySelector(".modal__noAvailableTime");
-
-        if (!noAvailableTime) {
-            noAvailableTime = document.createElement("p");
-            noAvailableTime.classList.add("modal__noAvailableTime");
-            modal1.appendChild(noAvailableTime);
-        }
-
-        noAvailableTime.innerText = "Unfortunately, all times are fully booked for this day. Please try selecting another day.";
-    }
-
-
     modalSearch.addEventListener("click", async () => {
         const date = input.value;
-        const url = `https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=${date}&challenge=${challenge.id}`;
-        
-        const res = await fetch(url);
-        const availableTimes = await res.json();
+        const availableTimes = await fetchAvailableTimes(date, challenge.id);
     
         if (availableTimes.slots.length === 0) {
             noAvailableTimeSlots(modal1);
@@ -181,7 +184,6 @@ function createModal2(challenge, availableTimes, date) {
         modal2.close();  
         const modal3 = createModal3();
         modal3.showModal();
-        // logReservations();
     });
 
     closeBtn.addEventListener("click", () => {
@@ -217,42 +219,3 @@ function createModal3() {
 
     return modal3;
 }
-
-function openModal(challenge) {
-    const modal1 = createModal1(challenge);
-    modal1.showModal();
-
-    return challenge;
-}
-
-async function postReservations(id, name, email, date, time, nrOfparticipants){
-    const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/booking/reservations', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            challenge: id,
-            name: name,
-            email: email,
-            date: date,
-            time: time,
-            participants: nrOfparticipants,
-        }),
-    });
-    if (!res.ok) {
-        throw new Error(`Failed: ${res.statusText}`);
-    }
-    else{
-        return res;
-    }
-}
-
-// async function logReservations(){
-//     const res = await postReservations(challengeID, inputNameValue, inputEmailValue, inputValue, selectTimeValue, selectParticipantsValue);
-//     const data = await res.json();
-//     console.log(data);
-// }
-
-
-

@@ -8,6 +8,10 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='challenges.css'>
+    <link rel="stylesheet" type='text/css' media='screen' href='filter.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -30,7 +34,74 @@
         <main class="main">
             <h2 class="main__title">Our Challenges</h2>
             <button class="main__button">Filter Challenges</button>
+            <!-- Filter Box -->
+            <div class="filter_box" style="display: none;">
+                <div class="filter_box_content">
+                    <span class="filter_box_close" id="close_button">&times;</span>
+                    <h3 class="filter_box_title">Filter challenges</h3>
+                    
+                    <!-- By Type -->
+                    <div class="by_type section">
+                        <h5>By type</h5>
+                        <form>
+                            <p>
+                                <input type="checkbox" class="online" name="onlinebox">
+                                <label for="onlinebox">Include online challenges</label>
+                            </p>
+                            <p>
+                                <input type="checkbox" class="onsite" name="onsitebox">
+                                <label for="onsitebox">Include on-site challenges</label>
+                            </p>
+                        </form>
+                    </div>
+                    
+                    <!-- By Rating -->
+                    <div class="by_rating_section">
+                        <h5 id="by_rating_title">By rating</h5>
+                        <div class="rating_stars">
+                            <i id="star1" class="fa-regular fa-star" style="color: #f2182d;"></i>
+                            <i id="star2" class="fa-regular fa-star" style="color: #f2182d;"></i>
+                            <i id="star3" class="fa-regular fa-star" style="color: #f2182d;"></i>
+                            <i id="star4" class="fa-regular fa-star" style="color: #f2182d;"></i>
+                            <i id="star5" class="fa-regular fa-star" style="color: #f2182d;"></i>
+                            <p id="to_rating_star">to</p>
+                            <i id="star6" class="fa-regular fa-star" style="color: #f2182d;"></i>
+                            <i id="star7" class="fa-regular fa-star" style="color: #f2182d;"></i>
+                            <i id="star8" class="fa-regular fa-star" style="color: #f2182d;"></i>
+                            <i id="star9" class="fa-regular fa-star" style="color: #f2182d;"></i>
+                            <i id="star10" class="fa-regular fa-star" style="color: #f2182d;"></i>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Search Input -->
+                    <div class="search_input section">
+                        <h5>Or type to search for keyword</h5>
+                        <input class="search_unput" type="text" placeholder="Start typing to filter">
+                    </div>
+                    
+                    <!-- By Tags -->
+                    <div class="by_tags section">
+                        <h5>By tags</h5>
+                        <div class="tags_container">
+                            <span class="filter__tag">Web</span>
+                            <span class="filter__tag">Linux</span>
+                            <span class="filter__tag">Cryptography</span>
+                            <span class="filter__tag">Coding</span>
+                            <span class="filter__tag">Ctf</span>
+                            <span class="filter__tag">Phreaking</span>
+                            <span class="filter__tag">Javascript</span>
+                            <span class="filter__tag">Hacking</span>
+                            <span class="filter__tag">Ssh</span>
+                            <span class="filter__tag">Bash</span>
+                            <span class="filter__tag">Electronics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="challenges__wrapper"></div>
+        
         </main>
         <footer class="foot">
             <div class="foot__left-content">
@@ -60,6 +131,7 @@
 
     <script src="ui.js"></script>
     <script src="challenges.js"></script>
+    <script src="filter.js"></script>
 </body>
 
 

@@ -111,13 +111,12 @@ function createModal2(challenge) {
     modal2.appendChild(modalSubmit);
     modalSubmit.innerText = "Submit booking";
 
-    
-    //selectTimeValue = selectTime.value;
-
     modalSubmit.addEventListener("click", () => {
         inputNameValue = inputName.value;
         inputEmailValue = inputEmail.value;
-        
+        //selectTimeValue = selectTime.value;
+        //selectParticipantsValue = selectParticipants.value;
+
         modal2.close();  
         const modal3 = createModal3();
         modal3.showModal();
@@ -165,19 +164,19 @@ function openModal(challenge) {
     return challenge;
 }
 
-async function postReservations(challengeID, inputName, inputEmail, input, selectTime, selectParticipants){
+async function postReservations(id, name, email, date, time, nrOfparticipants){
     const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/booking/reservations', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            challenge: challengeID,
-            name: inputName,
-            email: inputEmail,
-            date: input,
-            time: selectTime,
-            participants: selectParticipants,
+            challenge: id,
+            name: name,
+            email: email,
+            date: date,
+            time: time,
+            participants: nrOfparticipants,
         }),
     });
     if (!res.ok) {

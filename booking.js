@@ -7,6 +7,11 @@ function createModal1(challenge) {
     modal1.classList.add("modal");
     div.appendChild(modal1);
 
+    const closeBtn = document.createElement("button");
+    closeBtn.classList.add("close__button");
+    modal1.appendChild(closeBtn);
+    closeBtn.innerText = "X";
+
     const modalTitle = document.createElement("h1");
     modalTitle.classList.add("modal__title");
     modal1.appendChild(modalTitle);
@@ -24,6 +29,7 @@ function createModal1(challenge) {
 
     const input = document.createElement("input");
     input.classList.add("input");
+    input.type = "date";
     modal1.appendChild(input);
 
     const modalSearch = document.createElement("button");
@@ -31,12 +37,16 @@ function createModal1(challenge) {
     modal1.appendChild(modalSearch);
     modalSearch.innerText = "Search available times";
 
-
     modalSearch.addEventListener("click", () => {
+        inputValue = input.value;
         modal1.close();
 
         const modal2 = createModal2(challenge);
         modal2.showModal();
+    });
+
+    closeBtn.addEventListener("click", () => {
+        modal1.close();
     });
 
     return modal1;
@@ -50,6 +60,11 @@ function createModal2(challenge) {
     modal2.classList.add("modal");
     div.appendChild(modal2);
 
+    const closeBtn = document.createElement("button");
+    closeBtn.classList.add("close__button");
+    modal2.appendChild(closeBtn);
+    closeBtn.innerText = "X";
+    
     const modalTitle2 = document.createElement("h1");
     modalTitle2.classList.add("modal2__title");
     modal2.appendChild(modalTitle2);
@@ -96,11 +111,21 @@ function createModal2(challenge) {
     modal2.appendChild(modalSubmit);
     modalSubmit.innerText = "Submit booking";
 
-    modalSubmit.addEventListener("click", () => {
-        modal2.close();
+    
+    //selectTimeValue = selectTime.value;
 
+    modalSubmit.addEventListener("click", () => {
+        inputNameValue = inputName.value;
+        inputEmailValue = inputEmail.value;
+        
+        modal2.close();  
         const modal3 = createModal3();
         modal3.showModal();
+        logReservations();
+    });
+
+    closeBtn.addEventListener("click", () => {
+        modal2.close();
     });
 
     return modal2;
@@ -124,7 +149,7 @@ function createModal3() {
     link.classList.add("link");
     modal3.appendChild(link);
     link.innerText = "Back to challenges";
-    link.href = "http://127.0.0.1:5502/frontpage.html#";
+    link.href = "http://127.0.0.1:5502/challenges.html";
 
     link.addEventListener("click", () => {
         modal3.close();
@@ -140,27 +165,34 @@ function openModal(challenge) {
     return challenge;
 }
 
-async function postReservations(){
+async function postReservations(challengeID, inputName, inputEmail, input, selectTime, selectParticipants){
     const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/booking/reservations', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            challenge: "challenge name",
-            name: "Customer Name",
-            email: "name@example.com",
-            date: "2022-12-12",
-            time: "18:30",
-            participants: 4,
+            challenge: challengeID,
+            name: inputName,
+            email: inputEmail,
+            date: input,
+            time: selectTime,
+            participants: selectParticipants,
         }),
     });
+    if (!res.ok) {
+        throw new Error(`Failed: ${res.statusText}`);
+    }
+    else{
+        return res;
+    }
 }
 
 async function logReservations(){
-    const res = await postReservations();
+    const res = await postReservations(challengeID=12, inputNameValue, inputEmailValue, inputValue, selectTime="18:40", selectParticipants=4);
     const data = await res.json();
     console.log(data);
 }
 
-logReservations();
+
+

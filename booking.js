@@ -1,5 +1,4 @@
 function createModal1(challenge) {
-    console.log(challenge);
 
     const div = document.querySelector("#div");
     
@@ -15,7 +14,7 @@ function createModal1(challenge) {
     const modalTitle = document.createElement("h1");
     modalTitle.classList.add("modal__title");
     modal1.appendChild(modalTitle);
-    modalTitle.innerText = "Book room \"Escape room\" (step 1)";
+    modalTitle.innerText = `Book room ${challenge.title} (step 2)`;
 
     const modalQuestion = document.createElement("p");
     modalQuestion.classList.add("modal__question");
@@ -37,11 +36,35 @@ function createModal1(challenge) {
     modal1.appendChild(modalSearch);
     modalSearch.innerText = "Search available times";
 
+    function noAvailableTimeSlots(modal1) {
 
-    modalSearch.addEventListener("click", () => {
+        let noAvailableTime = modal1.querySelector(".modal__noAvailableTime");
+
+        if (!noAvailableTime) {
+            noAvailableTime = document.createElement("p");
+            noAvailableTime.classList.add("modal__noAvailableTime");
+            modal1.appendChild(noAvailableTime);
+        }
+
+        noAvailableTime.innerText = "Unfortunately, all times are fully booked for this day. Please try selecting another day.";
+    }
+
+
+    modalSearch.addEventListener("click", async () => {
+        const date = input.value;
+        const url = `https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=${date}&challenge=${challenge.id}`;
+        
+        const res = await fetch(url);
+        const availableTimes = await res.json();
+    
+        if (availableTimes.slots.length === 0) {
+            noAvailableTimeSlots(modal1);
+            return;
+        }
+
         modal1.close();
 
-        const modal2 = createModal2(challenge);
+        const modal2 = createModal2(challenge, availableTimes);
         modal2.showModal();
     });
 
@@ -52,9 +75,8 @@ function createModal1(challenge) {
     return modal1;
 }
 
-function createModal2(challenge) {
+function createModal2(challenge, availableTimes) {
     const div = document.querySelector("#div");
-    console.log(challenge.id)
 
     const modal2 = document.createElement("dialog");
     modal2.classList.add("modal");
@@ -68,7 +90,7 @@ function createModal2(challenge) {
     const modalTitle2 = document.createElement("h1");
     modalTitle2.classList.add("modal2__title");
     modal2.appendChild(modalTitle2);
-    modalTitle2.innerText = "Book room \"Escape room\" (step 2)";
+    modalTitle2.innerText = `Book room ${challenge.title} (step 2)`;
 
     const modalName = document.createElement("label");
     modalName.classList.add("modal__text");
@@ -97,6 +119,31 @@ function createModal2(challenge) {
     selectTime.classList.add("select__input");
     modal2.appendChild(selectTime);
 
+    for (let i = 0; i < availableTimes.slots.length; i++) {
+        const startTime = availableTimes.slots[i];
+
+        let [hours, minutes] = startTime.split(':').map(Number);
+
+        let totalMinutes = hours * 60 + minutes;
+
+        totalMinutes += 90;
+
+        const newHours = Math.floor(totalMinutes / 60);
+        const newMinutes = totalMinutes % 60;
+
+        let correctMinutes = newMinutes;
+        if (newMinutes < 10) {
+            correctMinutes = "0" + newMinutes;
+        }
+
+        const endTime = `${newHours}:${correctMinutes}`;
+
+        const option = document.createElement("option");
+        option.value = availableTimes.slots[i];
+        option.textContent = `${startTime} - ${endTime}`;
+        selectTime.appendChild(option);
+    }
+
     const modalParticipants = document.createElement("label");
     modalParticipants.classList.add("modal__text");
     modal2.appendChild(modalParticipants);
@@ -105,6 +152,13 @@ function createModal2(challenge) {
     const selectParticipants = document.createElement("select");
     selectParticipants.classList.add("select__input");
     modal2.appendChild(selectParticipants);
+
+    for (let i = challenge.minParticipants; i <= challenge.maxParticipants; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = `${i} participants`;
+        selectParticipants.appendChild(option);
+    }
 
     const modalSubmit = document.createElement("button");
     modalSubmit.classList.add("modal__search");

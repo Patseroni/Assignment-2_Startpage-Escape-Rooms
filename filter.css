@@ -153,5 +153,7 @@ body {
     width: 20px; 
     height: auto; 
 }
-
-
+.activated {
+    color: #fff;
+    background-color: #011827;
+}

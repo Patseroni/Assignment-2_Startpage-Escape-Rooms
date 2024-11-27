@@ -18,6 +18,27 @@ function noAvailableTimeSlots(modal1) {
     noAvailableTime.innerText = "Unfortunately, all times are fully booked for this day. Please try selecting another day.";
 }
 
+function userChoosePastDate(date, modal1) {
+    const selectedDate = new Date(date);
+        const today = new Date();
+
+        today.setHours(0, 0, 0, 0);
+
+        if (selectedDate < today) {
+            let pastDate = modal1.querySelector(".modal__pastDate");
+
+            if (!pastDate) {
+                pastDate = document.createElement("p");
+                pastDate.classList.add("modal__pastDate");
+                modal1.appendChild(pastDate);
+            }
+
+            pastDate.innerText = "You cannot select a past date. Please choose another date.";
+            return true;
+        }
+    return false;
+}
+
 function createModal1(challenge) {
 
     const div = document.querySelector("#div");
@@ -59,7 +80,11 @@ function createModal1(challenge) {
     modalSearch.addEventListener("click", async () => {
         const date = input.value;
         const availableTimes = await fetchAvailableTimes(date, challenge.id);
-    
+        
+        if (userChoosePastDate(date, modal1)) {
+            return;
+        };
+   
         if (availableTimes.slots.length === 0) {
             noAvailableTimeSlots(modal1);
             return;

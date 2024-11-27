@@ -35,7 +35,6 @@ const currentFilters = {
 async function applyFilters() {
 
     const challengesArray = await fetchChallenges();
-    console.log(challengesArray[3])
 
     for (let i = 0; i < challengesArray.length; i++) {
         const challengesWrapper = document.querySelector(".challenges__wrapper")

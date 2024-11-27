@@ -19,8 +19,6 @@ closeButton.addEventListener('click', () => {
 
 const onlineCheckbox = document.querySelector(".online")
 const onsiteCheckbox = document.querySelector(".onsite")
-const challengesWrapper = document.querySelector(".challenges__wrapper")
-
 
 //FILTER
 
@@ -36,6 +34,7 @@ let currentFilters = {
 // Function to update the display based on the current filters
 function applyFilters() {
     for (let i = 0; i < challengesArray.length; i++) {
+        const challengesWrapper = document.querySelector(".challenges__wrapper")
         const challenge = challengesWrapper.children.item(i);
         const challengeData = challengesArray[i];
 
@@ -251,7 +250,7 @@ tags.forEach(tag => {
 
 function checkChallenges() {
     const challenges = document.querySelectorAll('.challenges');
-    const message = document.querySelector('.no-challenges-message');
+    const message = document.querySelector('.challenges__message');
     let allHidden = true;
 
     challenges.forEach(function (challenge) {

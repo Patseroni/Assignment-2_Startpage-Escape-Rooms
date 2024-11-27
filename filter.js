@@ -23,7 +23,7 @@ const onsiteCheckbox = document.querySelector(".onsite")
 //FILTER
 
 // Initial filter state
-let currentFilters = {
+const currentFilters = {
     type: null,        // online or onsite
     search: "",        // search input value
     lowestRating: 0,   // lowest rating selected
@@ -32,7 +32,11 @@ let currentFilters = {
 };
 
 // Function to update the display based on the current filters
-function applyFilters() {
+async function applyFilters() {
+
+    const challengesArray = await fetchChallenges();
+    console.log(challengesArray[3])
+
     for (let i = 0; i < challengesArray.length; i++) {
         const challengesWrapper = document.querySelector(".challenges__wrapper")
         const challenge = challengesWrapper.children.item(i);
@@ -76,7 +80,6 @@ onsiteCheckbox.addEventListener('click', function () {
     }
     applyFilters();
 });
-
 
 // Search filter
 const searchInput = document.querySelector(".search-input");
@@ -241,14 +244,11 @@ tags.forEach(tag => {
     });
 });
 
-
-
-
-
 //NO MATCH
 
+ async function checkChallenges() {
+    await fetchChallenges();
 
-function checkChallenges() {
     const challenges = document.querySelectorAll('.challenges');
     const message = document.querySelector('.challenges__message');
     let allHidden = true;

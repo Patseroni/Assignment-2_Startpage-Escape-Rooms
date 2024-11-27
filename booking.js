@@ -55,7 +55,7 @@ function createModal1(challenge) {
     const modalTitle = document.createElement("h1");
     modalTitle.classList.add("modal__title");
     modal1.appendChild(modalTitle);
-    modalTitle.innerText = `Book room ${challenge.title} (step 2)`;
+    modalTitle.innerText = `Book room ${challenge.title} (step 1)`;
 
     const modalQuestion = document.createElement("p");
     modalQuestion.classList.add("modal__question");
@@ -118,7 +118,7 @@ function createModal2(challenge, availableTimes, date) {
     const modalTitle2 = document.createElement("h1");
     modalTitle2.classList.add("modal2__title");
     modal2.appendChild(modalTitle2);
-    modalTitle2.innerText = `Book room ${challenge.title} (step 1)`;
+    modalTitle2.innerText = `Book room ${challenge.title} (step 2)`;
 
     const modalName = document.createElement("label");
     modalName.classList.add("modal__text");

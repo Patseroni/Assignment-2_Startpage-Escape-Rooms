@@ -118,7 +118,7 @@ function createModal2(challenge, availableTimes, date) {
     const modalTitle2 = document.createElement("h1");
     modalTitle2.classList.add("modal2__title");
     modal2.appendChild(modalTitle2);
-    modalTitle2.innerText = `Book room ${challenge.title} (step 2)`;
+    modalTitle2.innerText = `Book room ${challenge.title} (step 1)`;
 
     const modalName = document.createElement("label");
     modalName.classList.add("modal__text");
@@ -194,6 +194,13 @@ function createModal2(challenge, availableTimes, date) {
     modalSubmit.innerText = "Submit booking";
 
      modalSubmit.addEventListener("click", async () => {
+        
+        if (inputName.value === "" || inputEmail.value === "") {
+            const emptyInput = document.createElement("p");
+            emptyInput.classList.add("modal__emptyInput");
+            modal2.appendChild(emptyInput);
+            emptyInput.innerText = "Please enter your name and email.";
+        }
 
         const challengeID = challenge.id;
         const inputNameValue = inputName.value;

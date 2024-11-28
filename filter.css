@@ -1,0 +1,158 @@
+/* core layout */
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.main {
+    text-align: center;
+    overflow: auto;
+}
+
+
+/* Filter Box */
+.filter_box {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.filter_box_content {
+    background-color: white;
+    padding: 30px;
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    /* Flexbox for layout */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; 
+    justify-content: space-between;
+    align-items: flex-start; 
+}
+
+/* Close Button */
+.filter_box_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    z-index: 1100; /* button above other elements */
+}
+
+/* Box Title */
+.filter_box_title {
+    flex-basis: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Section Styling */
+.section {
+    flex: 1 1 45%; 
+    min-width: 200px; /* Prevent sections from getting too small */
+}
+
+.section h5 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* By Type */
+.by_type p {
+    margin: 5px 0;
+}
+
+
+
+
+
+
+/* Search Input */
+.search_input input {
+    width: 50%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* By Tags */
+.by_tags {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tags_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.by_tags_title{
+    font-weight: bold;
+
+
+}
+.filter__tag {
+    font-weight: normal;
+    background-color: transparent;
+
+    color: rgb(72, 72, 72);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 1px solid #ccc; 
+   
+}
+
+.filter__tag:hover {
+    background-color: #ccc;
+}
+ 
+
+#to_rating_star {
+    font-size: 0.8rem; 
+    font-weight: 300; 
+    margin: 0 10px; 
+}
+
+.rating_stars {
+    display: flex; /* Flexbox tp make elementen stay put on same row*/
+    align-items: center; 
+    gap: 5px; 
+}
+
+.rating_stars img {
+    width: 20px; 
+    height: auto; 
+}
+.activated {
+    color: #fff;
+    background-color: #011827;
+}

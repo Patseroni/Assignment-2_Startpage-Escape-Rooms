@@ -1,3 +1,4 @@
+
 initShowAll ();
 
 async function initShowAll() {
@@ -10,3 +11,4 @@ async function initShowAll() {
     createChallengeCard(challengeData);
     }
 }
+

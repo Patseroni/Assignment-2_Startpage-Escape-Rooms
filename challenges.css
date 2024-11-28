@@ -1,3 +1,5 @@
+
+
 .main__title {
     margin-top: 50px;
     font-size: 2rem;
@@ -142,3 +144,11 @@
     width: 20px;
     height: 20px;
 }
+.challenges__message {
+    display: none;
+    font-size: 45px;
+    color: #011827;
+    margin-top: 170px;
+    margin-bottom: 80px;
+}
+

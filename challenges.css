@@ -120,6 +120,7 @@
     font-size: 1rem;
     font-weight: bold;
     border: none;
+    cursor: pointer;
 }
 
 .challenges__icon__onsite, .challenges__icon__online {

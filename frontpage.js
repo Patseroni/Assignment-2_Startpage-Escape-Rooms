@@ -1,3 +1,22 @@
+initTopThree();
+
+async function sortChallengesArray() {
+
+  const challengesArray = await fetchChallenges();
+
+  challengesArray.sort((a, b) => b.rating - a.rating);
+  
+  return challengesArray;
+}
+
+async function initTopThree() {
+
+  const challengesArray = await sortChallengesArray();
+    for (let i = 0; i < 3; i++) {
+        createChallengeCard(challengesArray[i]);
+    }
+}
+
 const body = document.querySelector('body');
 const header = document.querySelector('.header');
 const pageWrapper = document.querySelector('.page-wrapper');
@@ -64,59 +83,3 @@ menuCrossLink.addEventListener('click', () => {
   pageWrapper.classList.remove('page-wrapper-animate');
 
 });
-
-
-initTopThree();
-
-async function sortChallengesArray() {
-  const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
-  const data = await res.json(); 
-
-  const challengesArray = data.challenges;
-
-  challengesArray.sort((a, b) => b.rating - a.rating);
-  
-  return challengesArray;
-}
-
-async function initTopThree() {
-
-  const challengesArray = await sortChallengesArray();
-    for (let i = 0; i < 3; i++) {
-        createChallengeCard(challengesArray[i]);
-    }
-}
-
-
-
-
-
-
-
-
-/*
-
-getAPI();
-
-async function getAPI() {
-  const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
-  const data = await res.json(); 
-
-  const challengesArray = [];
-
-  data.challenges.forEach((challenge) => {
-      challengesArray.push(challenge);
-  })
-
-    challengesArray.sort((a, b) => b.rating - a.rating);
-
-    
-    for (let i = 0; i < 3; i++) {
-
-        const challenge = challengesArray[i];
-       
-        createChallengeCard(challenge);
-
-    }
-}
-*/

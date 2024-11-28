@@ -20,29 +20,29 @@ function noAvailableTimeSlots(modal1) {
 
 function userChoosePastDate(date, modal1) {
     const selectedDate = new Date(date);
-        const today = new Date();
+    const today = new Date();
 
-        today.setHours(0, 0, 0, 0);
+    today.setHours(0, 0, 0, 0);
 
-        if (selectedDate < today) {
-            let pastDate = modal1.querySelector(".modal__pastDate");
+    if (selectedDate < today) {
+        let pastDate = modal1.querySelector(".modal__pastDate");
 
-            if (!pastDate) {
-                pastDate = document.createElement("p");
-                pastDate.classList.add("modal__pastDate");
-                modal1.appendChild(pastDate);
-            }
-
-            pastDate.innerText = "You cannot select a past date. Please choose another date.";
-            return true;
+        if (!pastDate) {
+            pastDate = document.createElement("p");
+            pastDate.classList.add("modal__pastDate");
+            modal1.appendChild(pastDate);
         }
+
+        pastDate.innerText = "You cannot select a past date. Please choose another date.";
+        return true;
+    }
     return false;
 }
 
 function createModal1(challenge) {
 
     const div = document.querySelector("#div");
-    
+
     const modal1 = document.createElement("dialog");
     modal1.classList.add("modal");
     div.appendChild(modal1);
@@ -55,7 +55,7 @@ function createModal1(challenge) {
     const modalTitle = document.createElement("h1");
     modalTitle.classList.add("modal__title");
     modal1.appendChild(modalTitle);
-    modalTitle.innerText = `Book room ${challenge.title} (step 2)`;
+    modalTitle.innerText = `Book room ${challenge.title} (step 1)`;
 
     const modalQuestion = document.createElement("p");
     modalQuestion.classList.add("modal__question");
@@ -80,11 +80,11 @@ function createModal1(challenge) {
     modalSearch.addEventListener("click", async () => {
         const date = input.value;
         const availableTimes = await fetchAvailableTimes(date, challenge.id);
-        
+
         if (userChoosePastDate(date, modal1)) {
             return;
         };
-   
+
         if (availableTimes.slots.length === 0) {
             noAvailableTimeSlots(modal1);
             return;
@@ -114,7 +114,7 @@ function createModal2(challenge, availableTimes, date) {
     closeBtn.classList.add("close__button");
     modal2.appendChild(closeBtn);
     closeBtn.innerText = "X";
-    
+
     const modalTitle2 = document.createElement("h1");
     modalTitle2.classList.add("modal2__title");
     modal2.appendChild(modalTitle2);
@@ -193,22 +193,60 @@ function createModal2(challenge, availableTimes, date) {
     modal2.appendChild(modalSubmit);
     modalSubmit.innerText = "Submit booking";
 
-     modalSubmit.addEventListener("click", async () => {
+    const emptyInput = document.createElement("p");
+    emptyInput.classList.add("modal__emptyInput");
+    emptyInput.style.display = "none";
+    modal2.appendChild(emptyInput);
+    emptyInput.innerText = "Please enter a valid name and e-mail.";
 
-        const challengeID = challenge.id;
-        const inputNameValue = inputName.value;
-        const inputEmailValue = inputEmail.value;
-        const dateValue = date;
-        const selectTimeValue = selectTime.value;
-        const selectParticipantsValue = parseInt(selectParticipants.value, 10);
+    const emptyInputName = document.createElement("p");
+    emptyInputName.classList.add("modal__emptyInput");
+    emptyInputName.style.display = "none";
+    modal2.appendChild(emptyInputName);
+    emptyInputName.innerText = "Please enter a valid name.";
 
-        const res = await postReservations(challengeID, inputNameValue, inputEmailValue, dateValue, selectTimeValue, selectParticipantsValue);
-        const data = await res.json();
-        console.log(data);
+    const emptyInputEmail = document.createElement("p");
+    emptyInputEmail.classList.add("modal__emptyInput");
+    emptyInputEmail.style.display = "none";
+    modal2.appendChild(emptyInputEmail);
+    emptyInputEmail.innerText = "Please enter a valid e-mail.";
 
-        modal2.close();  
-        const modal3 = createModal3();
-        modal3.showModal();
+    modalSubmit.addEventListener("click", async () => {
+
+        if (inputName.value === "" && inputEmail.value === "") {
+            emptyInput.style.display = "block";
+            emptyInputName.style.display ="none"
+            emptyInputEmail.style.display = "none";
+        }
+
+        else if (inputName.value === "") {
+            emptyInputName.style.display = "block";
+            emptyInput.style.display = "none";
+            emptyInputEmail.style.display = "none";
+        }
+
+        else if (inputEmail.value === "") {
+            emptyInputEmail.style.display = "block";
+            emptyInputName.style.display ="none"
+            emptyInput.style.display = "none";
+        }
+
+        else {
+            const challengeID = challenge.id;
+            const inputNameValue = inputName.value;
+            const inputEmailValue = inputEmail.value;
+            const dateValue = date;
+            const selectTimeValue = selectTime.value;
+            const selectParticipantsValue = parseInt(selectParticipants.value, 10);
+    
+            const res = await postReservations(challengeID, inputNameValue, inputEmailValue, dateValue, selectTimeValue, selectParticipantsValue);
+            const data = await res.json();
+            console.log(data);
+    
+            modal2.close();
+            const modal3 = createModal3();
+            modal3.showModal();
+        }
     });
 
     closeBtn.addEventListener("click", () => {
@@ -225,7 +263,7 @@ function createModal3() {
     const modal3 = document.createElement("dialog");
     modal3.classList.add("modal");
     div.appendChild(modal3);
-    
+
 
     const modalMessage = document.createElement("h1");
     modalMessage.classList.add("modal__message");

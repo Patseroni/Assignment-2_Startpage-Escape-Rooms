@@ -12,6 +12,11 @@ filterButton.addEventListener('click', () => {
 
 // Eventlyssnare för att stänga rutan vid klick på stängningsknappen
 closeButton.addEventListener('click', () => {
+    const tags = document.querySelectorAll(".filter__tag");
+    tags.forEach(tag => {
+        tag.remove();
+    })
+    resetFilters();
     filterBox.style.display = 'none'; // 
     filterButton.style.display = 'block';
 });
@@ -285,3 +290,22 @@ tags.forEach(tag => {
     }
 }
 
+function resetFilters() {
+        currentFilters.type = null;
+        currentFilters.search = "";
+        currentFilters.lowestRating = 0;
+        currentFilters.highestRating = 5;
+        currentFilters.tags = [];
+    
+        onlineCheckbox.checked = false;
+        onsiteCheckbox.checked = false;
+    
+        searchInput.value = "";
+    
+        const allStars = document.querySelectorAll(".rating_stars i");
+        allStars.forEach(star => {
+            star.classList.replace("fa-solid", "fa-regular");
+        });
+    
+        applyFilters();
+}

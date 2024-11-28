@@ -1,0 +1,136 @@
+#div {
+    opacity: 0;
+}
+
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-left: 30px;
+    padding-top: 30px;
+    border-color: rgba(128, 128, 128, 0.443);
+    border-width: 2px;
+    width: 600px;
+    height: 500px;
+    font-family: "roboto", sans-serif;
+}
+
+
+.close__button {
+position: absolute;
+top: 5px;
+right: 10px;
+border: none;
+font-size: 24px;
+background: none;
+cursor: pointer;
+}
+
+
+.close__button:hover {
+    color: rgba(0, 0, 0, 0.303);
+}
+
+
+.modal__title {
+    margin-bottom: 40px;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+
+.modal2__title {
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+
+.modal__question {
+    font-size: 16px;
+}
+
+
+.modal__question,
+.input {
+    display: flex;
+}
+
+
+.input {
+    width: 150px;
+    height: 30px;
+    margin-bottom: 1rem;
+    border-color: rgb(187, 185, 185);
+    border-radius: 3px;
+}
+
+.modal__noAvailableTime, .modal__pastDate, .modal__emptyInput {
+    color: red;
+    max-width: 80%;
+}
+
+.modal__search {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0px 15px 15px 0px;
+    background-color: #E3170A;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    text-decoration: none;
+    line-height: 45px;
+    width: 180px;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+
+.modal__search:hover {
+    background-color: #e13b2f;
+}
+
+
+.modal__message {
+    margin-top: 150px;
+    margin-left: 200px;
+    font-weight: normal;
+}
+
+
+.modal__text {
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.select__input {
+    width: 150px;
+    height: 30px;
+    border-color: rgb(187, 185, 185);
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+
+.input__step2 {
+    width: 250px;
+    height: 30px;
+    border-color: rgb(187, 185, 185);
+    border-radius: 3px;
+}
+
+
+.link {
+    margin-top: 50px;
+    margin-left: 212px;
+    font-weight: normal;
+    color: #8ACFE5;
+}

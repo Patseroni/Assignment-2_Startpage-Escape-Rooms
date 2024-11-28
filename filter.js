@@ -5,6 +5,7 @@ const closeButton = document.getElementById('close_button');
 
 // Eventlyssnare för att öppna rutan vid klick på huvudknappen
 filterButton.addEventListener('click', () => {
+    getLabels();
     filterBox.style.display = 'flex'; // Visa modalrutan
     filterButton.style.display = 'none';
 });
@@ -15,20 +16,39 @@ closeButton.addEventListener('click', () => {
     filterButton.style.display = 'block';
 });
 
-// Eventlyssnare för filterknappar
+//Creating labels
+async function getLabels() {
+    const challengesArray = await fetchChallenges();
+    const tagsContainer = document.querySelector(".tags_container");
+    const labelArray = []
 
-const onlineCheckbox = document.querySelector(".online")
-const onsiteCheckbox = document.querySelector(".onsite")
+    for (let i = 0; i < challengesArray.length; i++) {
+        challengesArray[i].labels.forEach(label => {
+            if (!labelArray.includes(label)) {
+                labelArray.push(label);
+            }
+        })
+    }
+
+    for (let i = 0; i < labelArray.length; i++) {
+        let tagElement = labelArray[i]
+        tagElement = document.createElement("span");
+        tagElement.classList.add("filter__tag");
+        tagElement.innerHTML = labelArray[i]
+        tagsContainer.appendChild(tagElement);
+    }
+    applyFilterTag();
+}
 
 //FILTER
 
 // Initial filter state
 const currentFilters = {
-    type: null,        // online or onsite
-    search: "",        // search input value
-    lowestRating: 0,   // lowest rating selected
-    highestRating: 5,  // highest rating selected
-    tags: []           // active tags
+    type: null,        
+    search: "",        
+    lowestRating: 0,   
+    highestRating: 5, 
+    tags: []           
 };
 
 // Function to update the display based on the current filters
@@ -41,14 +61,12 @@ async function applyFilters() {
         const challenge = challengesWrapper.children.item(i);
         const challengeData = challengesArray[i];
 
-        // Check if challenge meets all filter criteria
         const matchesType = !currentFilters.type || challengeData.type === currentFilters.type;
         const matchesSearch = challengeData.title.toLowerCase().includes(currentFilters.search) ||
             challengeData.description.toLowerCase().includes(currentFilters.search);
         const matchesRating = challengeData.rating >= currentFilters.lowestRating && challengeData.rating <= currentFilters.highestRating;
         const matchesTags = currentFilters.tags.every(tag => challengeData.labels.includes(tag));
 
-        // Apply visibility based on all filter conditions
         if (matchesType && matchesSearch && matchesRating && matchesTags) {
             challenge.style.display = "flex";
         } else {
@@ -57,6 +75,9 @@ async function applyFilters() {
     }
     checkChallenges();
 }
+
+const onlineCheckbox = document.querySelector(".online")
+const onsiteCheckbox = document.querySelector(".onsite")
 
 // Filter by type (online/onsite)
 onlineCheckbox.addEventListener('click', function () {
@@ -154,7 +175,6 @@ document.querySelector(".rating_stars").addEventListener("click", function (e) {
 
     }
 
-    //if (highest == 0) {
     if (e.target.id === "star6") {
         currentFilters.highestRating = 1;
         if (document.querySelector("#star6").classList.contains("fa-solid")) {
@@ -223,10 +243,11 @@ document.querySelector(".rating_stars").addEventListener("click", function (e) {
 });
 
 // Tag filter
+
+function applyFilterTag() {
 const tags = document.querySelectorAll('.filter__tag');
 tags.forEach(tag => {
     tag.addEventListener('click', () => {
-        // Toggle tag activation
         if (tag.classList.contains("activated")) {
             tag.classList.remove("activated");
             const tagIndex = currentFilters.tags.indexOf(tag.innerHTML.toLowerCase());
@@ -237,11 +258,10 @@ tags.forEach(tag => {
             tag.classList.add("activated");
             currentFilters.tags.push(tag.innerHTML.toLowerCase());
         }
-
-        // Apply filters with updated tags
         applyFilters();
     });
 });
+}
 
 //NO MATCH
 

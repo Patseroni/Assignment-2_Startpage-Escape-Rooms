@@ -1,21 +1,24 @@
 async function fetchChallenges() {
     try {
-        const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenge');
+        const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
         
         if (!res.ok) {
-            throw new Error("Challenges could not be downloaded")
+            throw new Error("Unable to load challenge-list. Please try again later.")
         }
     
     const data = await res.json(); 
     return data.challenges;
+    
     } catch (error) {
         console.error("Error when downloading challenges:", error);
         
-        const errorDiv = document.createElement('div');
-        errorDiv.textContent = error.message;
-        document.body.appendChild(errorDiv);
+        const errorWrapper = document.querySelector(".error__wrapper");
+        errorWrapper.classList.add("error__message")
+        errorWrapper.textContent = error.message;
     }
 }
+
+
 
 async function fetchAvailableTimes(date, challengeId) {
     const url = `https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=${date}&challenge=${challengeId}`;

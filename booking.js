@@ -73,7 +73,7 @@ function createModal1(challenge) {
     modal1.appendChild(input);
 
     const modalSearch = document.createElement("button");
-    modalSearch.classList.add("modal__search");
+    modalSearch.classList.add("modal__search", "hover__effect");
     modal1.appendChild(modalSearch);
     modalSearch.innerText = "Search available times";
 
@@ -189,7 +189,7 @@ function createModal2(challenge, availableTimes, date) {
     }
 
     const modalSubmit = document.createElement("button");
-    modalSubmit.classList.add("modal__search");
+    modalSubmit.classList.add("modal__search", "hover__effect");
     modal2.appendChild(modalSubmit);
     modalSubmit.innerText = "Submit booking";
 

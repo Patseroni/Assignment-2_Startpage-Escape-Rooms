@@ -2,19 +2,19 @@
 
 **Allmänna regler gällande Trello**
 
-•Backlog: samtliga uppgifter i dokumentet ska föras in här. Ett kort per punkt. Färg på kortet inom backlog ska vara **blå**.
+**•Backlog:** samtliga uppgifter i dokumentet ska föras in här. Ett kort per punkt. Färg på kortet inom backlog ska vara **blå**.
 
-•Design: Samtliga kort ska gå igenom det här segmentet. Minst en person behöver kolla över design/research/kommentaren. De ska inte vidare till To-Do förrän ni är överens att inga frågetecken återstår hur uppgiften ska lösas. Färg på kortet kvarstår som **blå** och i det här stadiet ska ägare ha valts innan den kan gå vidare till To-Do.
+**•Design:** Samtliga kort ska gå igenom det här segmentet. Minst en person behöver kolla över design/research/kommentaren. De ska inte vidare till To-Do förrän ni är överens att inga frågetecken återstår hur uppgiften ska lösas. Färg på kortet kvarstår som **blå** och i det här stadiet ska ägare ha valts innan den kan gå vidare till To-Do.
 
-•To-Do: Här lägger ni uppgifter som är redo att göras. Färg på kortet är **röd**.
+**•To-Do:** Här lägger ni uppgifter som är redo att göras. Färg på kortet är **röd**.
 
-•Doing: Kontrollkolla bara så att ägare av kortet finns i det här momentet. Färg kvarstår som **röd**.
+**•Doing:** Kontrollkolla bara så att ägare av kortet finns i det här momentet. Färg kvarstår som **röd**.
 
-•Codereview: När ett kort har kommit så långt att det blivit en pullrequest. Då ska kortet läggas här. Välj en medlem som ska göra en review och skriv pm till den personen så den är upplyst över att koden är redo för review. Färg är fortfarande **röd** på kortet. Efter review är godkänt så gör kortägaren en merge.
+**•Codereview:** När ett kort har kommit så långt att det blivit en pullrequest. Då ska kortet läggas här. Välj en medlem som ska göra en review och skriv pm till den personen så den är upplyst över att koden är redo för review. Färg är fortfarande **röd** på kortet. Efter review är godkänt så gör kortägaren en merge.
 
-•Testing: När en pullreqesthar blivit en merge, så ska samma person som gjort reviewen testa koden så att den fungerar som det ska. Vid eventuella fel, ändra färg till **gul**, hör av dig till kortägaren som i sin tur beroende på dialog lägger tillbaka kort till "doing" om fel är komplext.
+**•Testing:** När en pullreqesthar blivit en merge, så ska samma person som gjort reviewen testa koden så att den fungerar som det ska. Vid eventuella fel, ändra färg till **gul**, hör av dig till kortägaren som i sin tur beroende på dialog lägger tillbaka kort till "doing" om fel är komplext.
 
-•Done: När uppgiften i kortet är avslutat hamnar kortet här och färg på kortet blir **grönt**.
+**•Done:** När uppgiften i kortet är avslutat hamnar kortet här och färg på kortet blir **grönt**.
 
 
 # Assignment-2_Startpage-Escape-Rooms Javascript-kurs

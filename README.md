@@ -4,7 +4,7 @@
 
 **•Backlog:** samtliga uppgifter i dokumentet ska föras in här. Ett kort per punkt. Färg på kortet inom backlog ska vara **blå**. **Vikigt:** Kom ihåg att skapa en ny branch för varje uppgift som vi skapar.
 
-**•Design:** Samtliga kort ska gå igenom det här segmentet. Minst en person behöver kolla över design/research/kommentaren. De ska inte vidare till To-Do förrän vi är överens att inga frågetecken återstår hur uppgiften ska lösas. Färg på kortet kvarstår som **blå** och i det här stadiet ska ägare ha valts innan den kan gå vidare till To-Do.
+**•Design:** Samtliga kort ska gå igenom det här segmentet. Minst en person behöver kolla över design/research/kommentaren. De ska inte vidare till To-Do förrän vi är överens att inga frågetecken återstår hur uppgiften ska lösas. Färg på kortet kvarstår som **blå** tills dess att de blivit reviewade av någon varefter den som reviewar kortet ändrar färgen till lila.
 
 **•To-Do:** Här lägger vi uppgifter som är redo att göras. Färg på kortet är **röd**.
 

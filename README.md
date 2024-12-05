@@ -1,6 +1,6 @@
 # Arbetsmetodik och agila projektmetoder -24 - Uppgift 1 - Trello
 
-**Allmänna regler gällande Trello**
+**Allmänna regler och arbetsmetodik gällande Trello**
 
 **•Backlog:** samtliga uppgifter i dokumentet ska föras in här. Ett kort per punkt. Färg på kortet inom backlog ska vara **blå**.
 

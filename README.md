@@ -2,11 +2,11 @@
 
 **Allmänna regler och arbetsmetodik gällande Trello**
 
-**•Backlog:** samtliga uppgifter i dokumentet ska föras in här. Ett kort per punkt. Färg på kortet inom backlog ska vara **blå**.
+**•Backlog:** samtliga uppgifter i dokumentet ska föras in här. Ett kort per punkt. Färg på kortet inom backlog ska vara **blå**. **Vikigt:** Kom ihåg att skapa en ny branch för varje uppgift som skapas. Det är den branchen som senare kommer att mergas in i main.
 
-**•Design:** Samtliga kort ska gå igenom det här segmentet. Minst en person behöver kolla över design/research/kommentaren. De ska inte vidare till To-Do förrän ni är överens att inga frågetecken återstår hur uppgiften ska lösas. Färg på kortet kvarstår som **blå** och i det här stadiet ska ägare ha valts innan den kan gå vidare till To-Do.
+**•Design:** Samtliga kort ska gå igenom det här segmentet. Minst en person behöver kolla över design/research/kommentaren. De ska inte vidare till To-Do förrän vi är överens att inga frågetecken återstår hur uppgiften ska lösas. Färg på kortet kvarstår som **blå** och i det här stadiet ska ägare ha valts innan den kan gå vidare till To-Do.
 
-**•To-Do:** Här lägger ni uppgifter som är redo att göras. Färg på kortet är **röd**.
+**•To-Do:** Här lägger vi uppgifter som är redo att göras. Färg på kortet är **röd**.
 
 **•Doing:** Kontrollkolla bara så att ägare av kortet finns i det här momentet. Färg kvarstår som **röd**.
 

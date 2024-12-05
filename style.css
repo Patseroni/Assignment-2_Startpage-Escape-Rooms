@@ -56,7 +56,7 @@ a:hover {
 
     width: 90%;
     height: 94vh;
-    background-color: #011827;
+    background-color: #021928;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -67,7 +67,7 @@ a:hover {
 .menu-cross-div {
     display: flex;
     justify-content: right;
-    background-color: #011827;
+    background-color: #021928;
 }
 
 .menu-cross{
@@ -83,7 +83,7 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #011827;
+    background-color: #021928;
     width: 100%;
     height: 90%;
 }
@@ -116,7 +116,7 @@ a:hover {
     align-items: center;
     width: 100%;
     height: 145px;
-    background-color: #011827;
+    background-color: #021928;
 }
 
 .header__logo {
@@ -169,7 +169,7 @@ a:hover {
     height: 70px;
     font-weight: bold;
     font-size: 1.5rem;
-    color: #011827;
+    color: #021928;
     background-color: #8ACFE5;
     text-decoration: none;
     border-radius: 5px;
@@ -223,7 +223,7 @@ a:hover {
     margin-top: 60px;
     padding-top: 60px;
     padding-bottom: 40px;
-    background-color: #011827;
+    background-color: #021928;
     color: #fff;
     font-size: 1.75rem;
 }
@@ -296,7 +296,7 @@ a:hover {
 }
 
 .foot {
-    background-color: #011827;
+    background-color: #021928;
     color: #fff;
     padding: 60px 25px;
     font-size: 1.1rem;

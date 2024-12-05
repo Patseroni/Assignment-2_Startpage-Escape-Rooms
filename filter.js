@@ -252,8 +252,11 @@ document.querySelector(".rating_stars").addEventListener("click", function (e) {
         warningText.innerHTML = "(ERROR) Lowest greater then highest!"
         warningText.classList.add("blink")
     }
-    
-    applyFilters();
+    else {
+        warningText.innerHTML = ""
+        warningText.classList.remove("blink")
+        applyFilters();
+    }
 });
 
 // Tag filter

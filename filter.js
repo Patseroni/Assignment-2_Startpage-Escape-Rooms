@@ -110,7 +110,12 @@ onsiteCheckbox.addEventListener('click', function () {
 const searchInput = document.querySelector(".search-input");
 searchInput.addEventListener("keyup", (e) => {
     currentFilters.search = e.target.value.toLowerCase();
-    applyFilters();
+    if (e.target.value.length > 2) {
+        applyFilters();
+    }
+    if (e.target.value.length === 0) {
+        applyFilters();
+    }
 });
 
 // Rating filter

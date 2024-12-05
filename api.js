@@ -1,8 +1,20 @@
 async function fetchChallenges() {
-    const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
+    try {
+        const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenge');
+        
+        if (!res.ok) {
+            throw new Error("Challenges could not be downloaded")
+        }
+    
     const data = await res.json(); 
-
     return data.challenges;
+    } catch (error) {
+        console.error("Error when downloading challenges:", error);
+        
+        const errorDiv = document.createElement('div');
+        errorDiv.textContent = error.message;
+        document.body.appendChild(errorDiv);
+    }
 }
 
 async function fetchAvailableTimes(date, challengeId) {

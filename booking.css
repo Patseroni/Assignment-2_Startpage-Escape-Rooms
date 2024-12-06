@@ -94,11 +94,6 @@
 }
 
 
-.modal__search:hover {
-    background-color: #e13b2f;
-}
-
-
 .modal__message {
     margin-top: 150px;
     margin-left: 200px;

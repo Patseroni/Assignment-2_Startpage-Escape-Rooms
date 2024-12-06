@@ -10,13 +10,13 @@ body {
 }
 
 .main {
-    text-align: center;
     overflow: auto;
 }
 
 
 /* Filter Box */
 .filter_box {
+    text-align: center;
     display: none;
     justify-content: center;
     align-items: center;
@@ -155,4 +155,32 @@ body {
 .activated {
     color: #fff;
     background-color: #021928;
+}
+
+.rating-warning-text {
+    margin-top: 5px;
+    color: #E3170A;
+}
+
+.blink {
+    animation: blink 1s;
+    transition: opasity 1s;
+    animation-duration: 400ms;
+    animation-iteration-count: 3;
+}
+
+@keyframes blink
+{
+    0%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
 }

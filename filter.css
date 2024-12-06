@@ -10,13 +10,13 @@ body {
 }
 
 .main {
-    text-align: center;
     overflow: auto;
 }
 
 
 /* Filter Box */
 .filter_box {
+    text-align: center;
     display: none;
     justify-content: center;
     align-items: center;

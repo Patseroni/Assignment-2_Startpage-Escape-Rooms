@@ -130,6 +130,11 @@
 }
 
 
+.input__step2::placeholder {
+    font-style: italic;
+}
+
+
 .link {
     margin-top: 50px;
     margin-left: 212px;

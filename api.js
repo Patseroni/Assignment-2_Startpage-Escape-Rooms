@@ -1,20 +1,22 @@
 async function fetchChallenges() {
+    const userErrorMessage = "Failed to load challenges, please come back later.";
+
     try {
-        const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
+        const res = await fetch("https://lernia-sjj-assignments.vercel.app/api/challenges");
         
         if (!res.ok) {
-            throw new Error("Unable to load challenge-list. Please try again later.")
+            throw new Error(userErrorMessage);
         }
     
-    const data = await res.json(); 
-    return data.challenges;
+        const data = await res.json(); 
+        return data.challenges;
     
     } catch (error) {
-        console.error("Error when downloading challenges:", error);
+        console.error("Error when trying to fetch api:", error);
         
         const errorWrapper = document.querySelector(".error__wrapper");
         errorWrapper.classList.add("error__message")
-        errorWrapper.textContent = error.message;
+        errorWrapper.textContent = userErrorMessage;
     }
 }
 

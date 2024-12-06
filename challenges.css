@@ -10,7 +10,7 @@
     margin-right: auto;
     color: #8ACFE5;
     display: block;
-    margin: 50px auto 80px auto;
+    margin: 50px auto 40px auto;
     text-decoration: none;
     padding: 20px 4px;
     font-weight: bold;
@@ -45,7 +45,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 100px;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 .challenges {

@@ -138,6 +138,17 @@ function createModal2(challenge, availableTimes, date) {
     inputEmail.classList.add("input__step2");
     modal2.appendChild(inputEmail);
 
+    const modalNumber = document.createElement("label");
+    modalNumber.classList.add("modal__text");
+    modal2.appendChild(modalNumber);
+    modalNumber.innerText = "Phone number:";
+
+    const inputNumber = document.createElement("input");
+    inputNumber.classList.add("input__step2");
+    inputNumber.type = "tel";
+    inputNumber.placeholder = "070-1234567"
+    modal2.appendChild(inputNumber);
+
     const modalTime = document.createElement("label");
     modalTime.classList.add("modal__text");
     modal2.appendChild(modalTime);

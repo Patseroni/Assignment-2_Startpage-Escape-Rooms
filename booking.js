@@ -141,7 +141,7 @@ function createModal2(challenge, availableTimes, date) {
     const modalNumber = document.createElement("label");
     modalNumber.classList.add("modal__text");
     modal2.appendChild(modalNumber);
-    modalNumber.innerText = "Phone number:";
+    modalNumber.innerText = "Phone number";
 
     const inputNumber = document.createElement("input");
     inputNumber.classList.add("input__step2");

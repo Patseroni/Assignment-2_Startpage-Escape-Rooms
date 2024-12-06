@@ -30,6 +30,17 @@ body {
     transition: opacity 0.3s, visibility 0.3s;
 }
 
+@media screen and (max-width: 480px) {
+    .filter_box {
+        position: fixed;
+        top: -350px;
+        left: 1.5rem;
+        max-width: 320px;
+        z-index: 1000;
+        font-size: 1.4rem;
+    }
+}
+
 .filter_box_content {
     background-color: white;
     padding: 30px;
@@ -86,16 +97,11 @@ body {
     
 }
 
-
-
-
-
-
 /* Search Input */
 .search_input input {
     width: 50%;
     padding: 8px;
-    font-size: 1rem;
+    font-size: rem;
     border: 1px solid #ccc;
     border-radius: 5px;
 }

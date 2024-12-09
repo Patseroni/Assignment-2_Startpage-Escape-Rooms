@@ -4,14 +4,28 @@ const filterBox = document.querySelector('.filter_box');
 const closeButton = document.getElementById('close_button');
 
 // Eventlyssnare för att öppna rutan vid klick på huvudknappen
-filterButton.addEventListener('click', () => {
+filterButton.addEventListener('click', async () => {
     getLabels();
+
+    const challengesArray = await fetchChallenges();
+    const challengesWrapper = document.querySelector(".challenges__wrapper")
+    const sortBy = document.querySelector(".sort-by")
+    const rating = document.querySelector(".sort-by__rating");
+    const title = document.querySelector(".sort-by__title");
+    sortBy.style.display = "none"
+    rating.checked = false
+    title.checked = false
+    reorderChallenges(challengesArray, challengesWrapper, rating); // Reset challenges to original order
+
     filterBox.style.display = 'flex'; // Visa modalrutan
     filterButton.style.display = 'none';
 });
 
 // Eventlyssnare för att stänga rutan vid klick på stängningsknappen
 closeButton.addEventListener('click', () => {
+    const sortBy = document.querySelector(".sort-by")
+    sortBy.style.display = "flex"
+
     const tags = document.querySelectorAll(".filter__tag");
     tags.forEach(tag => {
         tag.remove();
@@ -49,11 +63,11 @@ async function getLabels() {
 
 // Initial filter state
 const currentFilters = {
-    type: null,        
-    search: "",        
-    lowestRating: 0,   
-    highestRating: 5, 
-    tags: []           
+    type: null,
+    search: "",
+    lowestRating: 0,
+    highestRating: 5,
+    tags: []
 };
 
 // Function to update the display based on the current filters
@@ -246,36 +260,43 @@ document.querySelector(".rating_stars").addEventListener("click", function (e) {
                 document.querySelector(`#star${i}`).classList.replace("fa-regular", "fa-solid");
             }
         }
-
     }
-
-    applyFilters();
+    const warningText = document.querySelector(".rating-warning-text")
+    if (currentFilters.lowestRating > currentFilters.highestRating) {
+        warningText.innerHTML = "(ERROR) Lowest greater then highest!"
+        warningText.classList.add("blink")
+    }
+    else {
+        warningText.innerHTML = ""
+        warningText.classList.remove("blink")
+        applyFilters();
+    }
 });
 
 // Tag filter
 
 function applyFilterTag() {
-const tags = document.querySelectorAll('.filter__tag');
-tags.forEach(tag => {
-    tag.addEventListener('click', () => {
-        if (tag.classList.contains("activated")) {
-            tag.classList.remove("activated");
-            const tagIndex = currentFilters.tags.indexOf(tag.innerHTML.toLowerCase());
-            if (tagIndex !== -1) {
-                currentFilters.tags.splice(tagIndex, 1);
+    const tags = document.querySelectorAll('.filter__tag');
+    tags.forEach(tag => {
+        tag.addEventListener('click', () => {
+            if (tag.classList.contains("activated")) {
+                tag.classList.remove("activated");
+                const tagIndex = currentFilters.tags.indexOf(tag.innerHTML.toLowerCase());
+                if (tagIndex !== -1) {
+                    currentFilters.tags.splice(tagIndex, 1);
+                }
+            } else {
+                tag.classList.add("activated");
+                currentFilters.tags.push(tag.innerHTML.toLowerCase());
             }
-        } else {
-            tag.classList.add("activated");
-            currentFilters.tags.push(tag.innerHTML.toLowerCase());
-        }
-        applyFilters();
+            applyFilters();
+        });
     });
-});
 }
 
 //NO MATCH
 
- async function checkChallenges() {
+async function checkChallenges() {
     await fetchChallenges();
 
     const challenges = document.querySelectorAll('.challenges');
@@ -296,21 +317,21 @@ tags.forEach(tag => {
 }
 
 function resetFilters() {
-        currentFilters.type = null;
-        currentFilters.search = "";
-        currentFilters.lowestRating = 0;
-        currentFilters.highestRating = 5;
-        currentFilters.tags = [];
-    
-        onlineCheckbox.checked = false;
-        onsiteCheckbox.checked = false;
-    
-        searchInput.value = "";
-    
-        const allStars = document.querySelectorAll(".rating_stars i");
-        allStars.forEach(star => {
-            star.classList.replace("fa-solid", "fa-regular");
-        });
-    
-        applyFilters();
+    currentFilters.type = null;
+    currentFilters.search = "";
+    currentFilters.lowestRating = 0;
+    currentFilters.highestRating = 5;
+    currentFilters.tags = [];
+
+    onlineCheckbox.checked = false;
+    onsiteCheckbox.checked = false;
+
+    searchInput.value = "";
+
+    const allStars = document.querySelectorAll(".rating_stars i");
+    allStars.forEach(star => {
+        star.classList.replace("fa-solid", "fa-regular");
+    });
+
+    applyFilters();
 }

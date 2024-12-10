@@ -82,6 +82,8 @@ body {
 /* By Type */
 .by_type p {
     margin: 5px 0;
+    cursor: pointer;
+    
 }
 
 
@@ -125,14 +127,15 @@ body {
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
-    cursor: pointer;
     transition: background-color 0.3s;
     border: 1px solid #ccc; 
    
 }
 
 .filter__tag:hover {
+    cursor: pointer;
     background-color: #ccc;
+    
 }
  
 
@@ -148,10 +151,28 @@ body {
     gap: 5px; 
 }
 
+
+.rating_stars i {
+    width: 20px;
+    height: auto;
+    color: #f2182d; 
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
+}
+
+.rating_stars i:hover {
+    filter: drop-shadow(0 0 5px #f2182d); 
+    transform: scale(1.2); /* Slightly enlarge the star */
+    cursor: pointer; 
+}
+
+
+
 .rating_stars img {
     width: 20px; 
     height: auto; 
 }
+
+
 .activated {
     color: #fff;
     background-color: #021928;

@@ -59,6 +59,11 @@
     position: relative;
 }
 
+.challenges:hover{
+    box-shadow: 5px 5px 20px rgb(49, 49, 49);
+    cursor: pointer;
+}
+
 .challenges__content {
     box-sizing: border-box;
     padding: 0 15px 15px 15px;

@@ -261,16 +261,7 @@ document.querySelector(".rating_stars").addEventListener("click", function (e) {
             }
         }
     }
-    const warningText = document.querySelector(".rating-warning-text")
-    if (currentFilters.lowestRating > currentFilters.highestRating) {
-        warningText.innerHTML = "(ERROR) Lowest greater then highest!"
-        warningText.classList.add("blink")
-    }
-    else {
-        warningText.innerHTML = ""
-        warningText.classList.remove("blink")
-        applyFilters();
-    }
+    applyFilters();
 });
 
 // Tag filter

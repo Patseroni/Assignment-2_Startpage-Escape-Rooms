@@ -30,6 +30,16 @@ body {
     transition: opacity 0.3s, visibility 0.3s;
 }
 
+@media screen and (max-width: 480px) {
+    .filter_box {
+        position: fixed;
+        top: -350px;
+        left: 1.5rem;
+        max-width: 320px;
+        z-index: 1000;
+    }
+}
+
 .filter_box_content {
     background-color: white;
     padding: 30px;
@@ -85,11 +95,6 @@ body {
     cursor: pointer;
     
 }
-
-
-
-
-
 
 /* Search Input */
 .search_input input {

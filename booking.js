@@ -146,7 +146,7 @@ function createModal2(challenge, availableTimes, date) {
     const inputNumber = document.createElement("input");
     inputNumber.classList.add("input__step2");
     inputNumber.type = "tel";
-    inputNumber.placeholder = "070-1234567"
+    inputNumber.placeholder = "070-xxxxxxx"
     modal2.appendChild(inputNumber);
 
     const modalTime = document.createElement("label");

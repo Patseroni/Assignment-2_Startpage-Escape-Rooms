@@ -30,6 +30,16 @@ body {
     transition: opacity 0.3s, visibility 0.3s;
 }
 
+@media screen and (max-width: 480px) {
+    .filter_box {
+        position: fixed;
+        top: -350px;
+        left: 1.5rem;
+        max-width: 320px;
+        z-index: 1000;
+    }
+}
+
 .filter_box_content {
     background-color: white;
     padding: 30px;
@@ -49,8 +59,8 @@ body {
 /* Close Button */
 .filter_box_close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 5px;
+    right: 15px;
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
@@ -73,6 +83,10 @@ body {
     min-width: 200px; /* Prevent sections from getting too small */
 }
 
+#close_button {
+    font-size: 3rem;
+}
+
 .section h5 {
     font-size: 1rem;
     font-weight: bold;
@@ -85,11 +99,6 @@ body {
     cursor: pointer;
     
 }
-
-
-
-
-
 
 /* Search Input */
 .search_input input {

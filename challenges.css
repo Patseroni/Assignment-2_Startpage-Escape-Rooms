@@ -48,7 +48,25 @@
     margin-top: 80px;
 }
 
+@keyframes animateCards{
+    0%{
+        opacity:0%;
+        transform: translateY(-50px);
+    }
+
+    100%{
+        opacity:100%;
+        transform: translateY(0px); 
+    }
+}
+
 .challenges {
+    opacity:0%;
+    animation-name: animateCards;
+    animation-duration: 400ms;
+    animation-delay:300ms;
+    animation-fill-mode: forwards;
+
     display: flex;
     flex-direction: column;
     max-width: 364px;
@@ -59,10 +77,13 @@
     position: relative;
 }
 
+
+
 .challenges:hover{
     box-shadow: 5px 5px 20px rgb(49, 49, 49);
     cursor: pointer;
 }
+
 
 .challenges__content {
     box-sizing: border-box;

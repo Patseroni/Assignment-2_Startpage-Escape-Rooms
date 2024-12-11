@@ -94,11 +94,6 @@
 }
 
 
-.modal__search:hover {
-    background-color: #e13b2f;
-}
-
-
 .modal__message {
     margin-top: 150px;
     margin-left: 200px;
@@ -127,6 +122,11 @@
     height: 30px;
     border-color: rgb(187, 185, 185);
     border-radius: 3px;
+}
+
+
+.input__step2::placeholder {
+    font-style: italic;
 }
 
 

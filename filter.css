@@ -96,9 +96,19 @@ body {
 /* By Type */
 .by_type p {
     margin: 5px 0;
-    cursor: pointer;
-    
 }
+
+
+.by_type input[type="checkbox"] {
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out; 
+}
+
+/* Shadow with hover */
+.by_type input[type="checkbox"]:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
 
 /* Search Input */
 .search_input input {
@@ -107,6 +117,12 @@ body {
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.search_input input:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); 
+    border-color: #999; 
 }
 
 /* By Tags */

@@ -40,6 +40,16 @@ a:hover {
 
 /* Javascript-created elements for smaller screens-menu*/
 
+.error__wrapper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error__message {
+    color: red;
+    font-size: 2em;
+}
+
 .page-wrapper-animate {
     animation-name: fadeOut;
     animation-duration: 500ms;

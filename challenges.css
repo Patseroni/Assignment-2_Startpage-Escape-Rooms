@@ -1,17 +1,16 @@
-
-
 .main__title {
     margin-top: 50px;
     font-size: 2rem;
     text-align: center;
 }
+
 .main__button {
     display: block;
     margin-left: auto;
     margin-right: auto;
     color: #8ACFE5;
     display: block;
-    margin: 50px auto 80px auto;
+    margin: 50px auto 40px auto;
     text-decoration: none;
     padding: 20px 4px;
     font-weight: bold;
@@ -46,10 +45,28 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 100px;
-    margin-top: 50px;
+    margin-top: 80px;
+}
+
+@keyframes animateCards{
+    0%{
+        opacity:0%;
+        transform: translateY(-50px);
+    }
+
+    100%{
+        opacity:100%;
+        transform: translateY(0px); 
+    }
 }
 
 .challenges {
+    opacity:0%;
+    animation-name: animateCards;
+    animation-duration: 400ms;
+    animation-delay:300ms;
+    animation-fill-mode: forwards;
+
     display: flex;
     flex-direction: column;
     max-width: 364px;
@@ -60,15 +77,18 @@
     position: relative;
 }
 
+
+
 .challenges:hover{
     box-shadow: 5px 5px 20px rgb(49, 49, 49);
     cursor: pointer;
 }
 
+
 .challenges__content {
     box-sizing: border-box;
     padding: 0 15px 15px 15px;
-    
+
 }
 
 .challenge__title__container {
@@ -80,12 +100,14 @@
     font-weight: 400;
     font-size: 28px;
 }
+
 .challenges__onsite {
     margin-left: 5px;
     font-weight: 400;
     font-size: 28px;
     min-width: 105px;
 }
+
 .challenges__image {
     height: 240px;
     border-radius: 10px 10px 0px 0px;
@@ -98,8 +120,9 @@
 
 .challenges__participants {
     font-size: 14px;
-   
+
 }
+
 .challenges__networked {
     margin-left: 5px;
     font-size: 14px;
@@ -110,11 +133,12 @@
     font-size: 17px;
 }
 
-.challenges__onsiteBtn ,.challenges__onlineBtn {
+.challenges__onsiteBtn,
+.challenges__onlineBtn {
     position: absolute;
     right: 15px;
     bottom: 15px;
-    
+
     background-color: #E3170A;
     text-align: center;
     line-height: 40px;
@@ -130,7 +154,8 @@
     cursor: pointer;
 }
 
-.challenges__icon__onsite, .challenges__icon__online {
+.challenges__icon__onsite,
+.challenges__icon__online {
     position: absolute;
     width: 45px;
     top: 15px;
@@ -139,16 +164,19 @@
 
 }
 
-.challenge__rating__container{
+.challenge__rating__container {
     transform: translateY(-35px);
     margin-left: 15px;
 }
 
-.challenges__rating__empty__star, .challenge__rating__half__filled, .challenge__rating__filled {
+.challenges__rating__empty__star,
+.challenge__rating__half__filled,
+.challenge__rating__filled {
     margin-right: 5px;
     width: 20px;
     height: 20px;
 }
+
 .challenges__message {
     display: none;
     font-size: 45px;
@@ -157,3 +185,31 @@
     margin-bottom: 80px;
 }
 
+
+.sort-by {
+    border: 2px solid;
+    border-color: #011827;
+    color: #011827;
+    display: flex;
+    width: 210px;
+    margin: 0 auto;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.sort-by__main-title {
+    font-size: 28px;
+}
+
+.sort-by__rating {
+    margin-left: 10px;
+}
+
+.sort-by__rating-label {
+    font-size: 22px;
+}
+
+.sort-by__title-label {
+    margin-right: 10px;
+    font-size: 22px;
+}

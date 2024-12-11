@@ -10,7 +10,7 @@
 
 **•Doing:** Kontrollkolla bara så att ägare av kortet finns i det här momentet. Färg kvarstår som **röd**.
 
-**•Codereview:** När ett kort har kommit så långt att det blivit en pullrequest. Då ska kortet läggas här. Välj en medlem som ska göra en review och skriv pm till den personen så den är upplyst över att koden är redo för review. Färg är fortfarande **röd** på kortet. Efter review är godkänt så gör kortägaren en merge.
+**•Codereview:** När ett kort har kommit så långt att det blivit en pullrequest. Då ska kortet läggas här. Skriv till den person som gjort design-reviewen att koden är redo för review exempelvis: "Code is ready for review @Johnny". Färg är fortfarande **röd** på kortet. Efter review är godkänt så gör kortägaren en merge.
 
 **•Testing:** När en pullreqesthar blivit en merge, så ska samma person som gjort reviewen testa koden så att den fungerar som det ska. Vid eventuella fel, ändra färg till **gul**, hör av dig till kortägaren som i sin tur beroende på dialog lägger tillbaka kort till "doing" om fel är komplext.
 

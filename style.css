@@ -379,16 +379,20 @@ a:hover {
 
     .header__play-online,
     .header__play-onsite,
-    .header__story {
+    .header__story,
+    .header__contact {
         color: #fff;
+    }
+
+    .header__play-online:hover,
+    .header__play-onsite:hover,
+    .header__story:hover,
+    .header__contact:hover {
+        color: #8ACFE5;
     }
 
     .hamburger-link {
         display: none;
-    }
-
-    .header__contact {
-        color: #8ACFE5;
     }
 
     .top-image__img {

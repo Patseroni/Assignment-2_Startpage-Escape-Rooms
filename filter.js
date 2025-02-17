@@ -2,6 +2,8 @@
 const filterButton = document.querySelector('.main__button');
 const filterBox = document.querySelector('.filter_box');
 const closeButton = document.getElementById('close_button');
+const onlineCheckbox = document.querySelector(".online");
+const onsiteCheckbox = document.querySelector(".onsite");
 
 // Eventlyssnare för att öppna rutan vid klick på huvudknappen
 filterButton.addEventListener('click', async () => {
@@ -95,30 +97,49 @@ async function applyFilters() {
     checkChallenges();
 }
 
-const onlineCheckbox = document.querySelector(".online")
-const onsiteCheckbox = document.querySelector(".onsite")
+// Initialize filters when both checkboxes exists in the DOM
+if (onlineCheckbox && onsiteCheckbox) {
+    initializeFilters();
+}
 
-// Filter by type (online/onsite)
-onlineCheckbox.addEventListener('click', function () {
-    if (this.checked) {
+// Function to initialize filters from URL-parameters and add event listeners to online/onsite checkbox
+function initializeFilters() {
+    const params = new URLSearchParams(window.location.search);
+    const filter = params.get('filter');
+
+    if (filter === 'online') {
         currentFilters.type = "online";
+        onlineCheckbox.checked = true;
         onsiteCheckbox.checked = false;
-    }
-    else {
-        currentFilters.type = "";
-    }
-    applyFilters();
-});
-onsiteCheckbox.addEventListener('click', function () {
-    if (this.checked) {
+    } else if (filter === 'onsite') {
         currentFilters.type = "onsite";
+        onsiteCheckbox.checked = true;
         onlineCheckbox.checked = false;
     }
-    else {
-        currentFilters.type = "";
-    }
+
     applyFilters();
-});
+
+    onlineCheckbox.addEventListener('click', function () {
+        if (this.checked) {
+            currentFilters.type = "online";
+            onsiteCheckbox.checked = false;
+        } else {
+            currentFilters.type = "";
+        }
+        applyFilters();
+    });
+
+    onsiteCheckbox.addEventListener('click', function () {
+        if (this.checked) {
+            currentFilters.type = "onsite";
+            onlineCheckbox.checked = false;
+        } else {
+            currentFilters.type = "";
+        }
+        applyFilters();
+    });
+}
+
 
 // Search filter
 const searchInput = document.querySelector(".search-input");

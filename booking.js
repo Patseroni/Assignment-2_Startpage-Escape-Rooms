@@ -90,14 +90,14 @@ function createModal1(challenge) {
             return;
         }
 
-        modal1.close();
+        modal1.remove();
 
         const modal2 = createModal2(challenge, availableTimes, date);
         modal2.showModal();
     });
 
     closeBtn.addEventListener("click", () => {
-        modal1.close();
+        modal1.remove();
     });
 
     return modal1;
@@ -261,7 +261,7 @@ function createModal2(challenge, availableTimes, date) {
     });
 
     closeBtn.addEventListener("click", () => {
-        modal2.close();
+        modal2.remove();
     });
 
     return modal2;

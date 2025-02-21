@@ -89,7 +89,9 @@ async function applyFilters() {
         const matchesTags = currentFilters.tags.every(tag => challengeData.labels.includes(tag));
 
         if (matchesType && matchesSearch && matchesRating && matchesTags) {
+            if (challenge) {
             challenge.style.display = "flex";
+            }
         } else {
             challenge.style.display = "none";
         }

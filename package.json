@@ -1,0 +1,16 @@
+{
+  "name": "assignment-2_startpage-escape-rooms",
+  "version": "1.0.0",
+  "description": "**Allmänna regler och arbetsmetodik gällande Trello**",
+  "main": "api.js",
+  "devDependencies": {
+    "cypress": "^14.0.3"
+  },
+  "scripts": {
+    "test-local": "CYPRESS_BASE_URL=http://localhost:5502 npx cypress run",
+    "test-deploy": "CYPRESS_BASE_URL=https://patseroni.github.io/Assignment-2_Startpage-Escape-Rooms/ npx cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
